@@ -65,3 +65,6 @@ github "xquartz",     "1.2.1"
 # github "postgresql",  "3.0.3"
 # github "redis",       "3.1.0"
 # github "sysctl",      "1.0.1"
+
+github "mongodb", "2.6.1"
+github "webstorm", "1.0.0"
