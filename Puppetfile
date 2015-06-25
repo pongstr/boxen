@@ -67,4 +67,4 @@ github "xquartz",     "1.2.1"
 # github "sysctl",      "1.0.1"
 
 github "mongodb",     "2.6.1", :repo => "boxen/puppet-mongodb"
-github "webstorm",    "1.0.0", :repo => "boxen/puppet-webstorm"
+github "webstorm",    "1.1.0", :repo => "boxen/puppet-webstorm"
