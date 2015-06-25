@@ -1,6 +1,6 @@
-class people::jbarnette {
-  include "mongodb"
-  include "webstorm"
+class people::pongstr {
+  # include "mongodb"
+  # include "webstorm"
 
   $home     = "/Users/${::boxen_user}"
   $my       = "${home}/my"
