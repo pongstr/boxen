@@ -4,7 +4,7 @@ class people::pongstr {
 
   # just a notification that my settings
   # are declared when boxen run
-  notify { 'class people::pongstr declared': }
+  notify { "class people::pongstr declared" }
 
   $home     = "/Users/${::boxen_user}"
   $my       = "${home}/my"
