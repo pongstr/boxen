@@ -66,5 +66,6 @@ github "sudo",        "1.0.0"
 # github "redis",       "3.1.0"
 # github "sysctl",      "1.0.1"
 
-github "mongodb",     "2.6.1"
+github "mongodb",     "1.4.0"
 github "webstorm",    "1.1.1"
+github "hipchat",     "1.1.3"

@@ -1,3 +1,3 @@
-class group::frontend {
+class groups::frontend {
   notify { 'Frontend': }
 }

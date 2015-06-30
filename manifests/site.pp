@@ -1,4 +1,5 @@
 require boxen::environment
+require groups::frontend
 require homebrew
 require gcc
 
@@ -58,6 +59,7 @@ node default {
   # include webstorm
   # include mongodb
   include git
+  include brewcask
 
   # fail if FDE is not enabled
   if $::root_encrypted == 'no' {

@@ -29,9 +29,9 @@ GITHUBTARBALL
     git (2.7.9)
 
 GITHUBTARBALL
-  remote: boxen/puppet-go
+  remote: boxen/puppet-hipchat
   specs:
-    go (2.1.0)
+    hipchat (1.1.3)
 
 GITHUBTARBALL
   remote: boxen/puppet-homebrew
@@ -39,9 +39,9 @@ GITHUBTARBALL
     homebrew (1.12.0)
 
 GITHUBTARBALL
-  remote: boxen/puppet-hub
+  remote: boxen/puppet-mongodb
   specs:
-    hub (1.4.1)
+    mongodb (1.4.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-nginx
@@ -84,9 +84,9 @@ GITHUBTARBALL
     sudo (1.0.0)
 
 GITHUBTARBALL
-  remote: boxen/puppet-xquartz
+  remote: boxen/puppet-webstorm
   specs:
-    xquartz (1.2.1)
+    webstorm (1.1.1)
 
 GITHUBTARBALL
   remote: puppetlabs/puppetlabs-inifile
@@ -110,11 +110,11 @@ DEPENDENCIES
   foreman (= 1.2.0)
   gcc (= 2.2.1)
   git (= 2.7.9)
-  go (= 2.1.0)
+  hipchat (= 1.1.3)
   homebrew (= 1.12.0)
-  hub (= 1.4.1)
   inifile (= 1.1.1)
   module_data (= 0.0.3)
+  mongodb (= 1.4.0)
   nginx (= 1.4.5)
   nodejs (= 4.0.1)
   openssl (= 1.0.0)
@@ -124,5 +124,5 @@ DEPENDENCIES
   ruby (= 8.5.2)
   stdlib (= 4.2.1)
   sudo (= 1.0.0)
-  xquartz (= 1.2.1)
+  webstorm (= 1.1.1)
 
