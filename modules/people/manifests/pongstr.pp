@@ -1,21 +1,9 @@
 class people::pongstr {
-  include mongodb
+  notify { 'hello pongstr': }
+
   include webstorm
+  include mongodb
+  include hipchat
 
-  # just a notification that my settings
-  # are declared when boxen run
-  notify { "class people::pongstr declared" }
-
-  $home     = "/Users/${::boxen_user}"
-  $my       = "${home}/my"
-  $dotfiles = "${my}/dotfiles"
-
-  file { $my:
-    ensure  => directory
-  }
-
-  repository { $dotfiles:
-    source  => 'pongstr/dotfiles',
-    require => File[$my]
-  }
+  package { 'robomongo': provider => 'brewcask' }
 }
