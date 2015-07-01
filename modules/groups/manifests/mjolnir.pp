@@ -10,5 +10,6 @@ class groups::mjolnir {
   include sublime_text
 
   package { 'robomongo': provider => 'brewcask' }
+  package { 'github': provider => 'brewcask' }
 
 }
