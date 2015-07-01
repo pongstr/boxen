@@ -74,8 +74,5 @@ github "dashlane",    "1.0.1"
 github "sublime_text", "1.1.0"
 github "java",         "1.8.3"
 github "mongodb",      "1.3.4"
-<<<<<<< HEAD
-github "vlc",          "1.1.0"
-=======
 github "cyberduck",    "1.0.1"
->>>>>>> boxen-reload
+github "vlc",          "1.1.0"
