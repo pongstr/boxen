@@ -1,5 +1,4 @@
 require boxen::environment
-require groups
 require homebrew
 require gcc
 
@@ -55,12 +54,21 @@ Homebrew::Formula <| |> -> Package <| |>
 node default {
   # core modules, needed for most things
   include git
+  include hub
   include brewcask
 
   # fail if FDE is not enabled
   if $::root_encrypted == 'no' {
     fail('Please enable full disk encryption and try again')
   }
+
+
+  # node versions
+  nodejs::version { 'v0.12': }
+
+  # default ruby versions
+  ruby::version { '2.1.2': }
+
 
   # common, useful packages
   package {
@@ -71,7 +79,7 @@ node default {
     ]:
   }
 
-  file { "${boxen::config::srcdir}/boxen":
+  file { "${boxen::config::srcdir}/our-boxen":
     ensure => link,
     target => $boxen::config::repodir
   }
