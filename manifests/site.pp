@@ -1,6 +1,7 @@
 require boxen::environment
 require homebrew
 require gcc
+require groups::osiris
 
 Exec {
   group       => 'staff',
@@ -53,8 +54,6 @@ Homebrew::Formula <| |> -> Package <| |>
 
 node default {
   # core modules, needed for most things
-  # include dnsmasq
-  # include nginx
   include git
   include hub
 
