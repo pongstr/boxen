@@ -6,5 +6,6 @@ class groups::mjolnir {
   include dashlane
   include firefox
   include hipchat
+  include sublime_text
 
 }
