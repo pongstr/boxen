@@ -68,6 +68,10 @@ github "xquartz",     "1.2.1"
 
 github "chrome",      "1.2.0"
 github "firefox",     "1.2.3"
+<<<<<<< HEAD
+github "atom",        "1.2.0"
+=======
 github "hipchat",     "1.1.3"
 github "dashlane",    "1.0.1"
 github "sublime_text", "1.1.0"
+>>>>>>> boxen-reload

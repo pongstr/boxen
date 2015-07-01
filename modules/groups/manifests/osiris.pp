@@ -5,5 +5,5 @@ class groups::osiris {
 
   include chrome
   include chrome::canary
-
+  include atom
 }
