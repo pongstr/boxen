@@ -68,3 +68,5 @@ github "xquartz",     "1.2.1"
 
 github "chrome",      "1.2.0"
 github "firefox",     "1.2.3"
+github "hipchat",     "1.1.3"
+github "dashlane",    "1.0.1"

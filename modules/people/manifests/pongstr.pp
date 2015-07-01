@@ -1,6 +1,6 @@
 
 class people::pongstr {
-  notify { 'Hello ${::boxen_user}': }
-
+  require groups::mjolnir
+  notify { "Hello ${::boxen_user}": }
 
 }
