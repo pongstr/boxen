@@ -7,5 +7,5 @@ include chrome
 include chrome::canary
 include atom
 include vlc
-
+include virtualbox
 }
