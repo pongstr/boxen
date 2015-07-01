@@ -68,3 +68,4 @@ github "xquartz",     "1.2.1"
 
 github "chrome",      "1.2.0"
 github "firefox",     "1.2.3"
+github "atom",        "1.2.0"

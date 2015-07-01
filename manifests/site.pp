@@ -1,7 +1,7 @@
 require boxen::environment
 require homebrew
 require gcc
-require groups::osiris
+
 
 Exec {
   group       => 'staff',
