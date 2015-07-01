@@ -19,6 +19,11 @@ GITHUBTARBALL
     chrome (1.2.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-dashlane
+  specs:
+    dashlane (1.0.1)
+
+GITHUBTARBALL
   remote: boxen/puppet-dnsmasq
   specs:
     dnsmasq (2.0.1)
@@ -47,6 +52,11 @@ GITHUBTARBALL
   remote: boxen/puppet-go
   specs:
     go (2.1.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-hipchat
+  specs:
+    hipchat (1.1.3)
 
 GITHUBTARBALL
   remote: boxen/puppet-homebrew
@@ -94,6 +104,11 @@ GITHUBTARBALL
     ruby (8.5.2)
 
 GITHUBTARBALL
+  remote: boxen/puppet-sublime_text
+  specs:
+    sublime_text (1.1.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-sudo
   specs:
     sudo (1.0.0)
@@ -123,12 +138,14 @@ DEPENDENCIES
   boxen (= 3.10.4)
   brewcask (= 0.0.6)
   chrome (= 1.2.0)
+  dashlane (= 1.0.1)
   dnsmasq (= 2.0.1)
   firefox (= 1.2.3)
   foreman (= 1.2.0)
   gcc (= 2.2.1)
   git (= 2.7.9)
   go (= 2.1.0)
+  hipchat (= 1.1.3)
   homebrew (= 1.12.0)
   hub (= 1.4.1)
   inifile (= 1.1.1)
@@ -141,6 +158,7 @@ DEPENDENCIES
   repository (= 2.4.1)
   ruby (= 8.5.2)
   stdlib (= 4.2.1)
+  sublime_text (= 1.1.0)
   sudo (= 1.0.0)
   xquartz (= 1.2.1)
 
