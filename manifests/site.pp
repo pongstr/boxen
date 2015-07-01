@@ -54,10 +54,6 @@ Homebrew::Formula <| |> -> Package <| |>
 
 node default {
   # core modules, needed for most things
-  # include dnsmasq
-  # include nginx
-  # include webstorm
-  # include mongodb
   include git
   include brewcask
 
@@ -65,12 +61,6 @@ node default {
   if $::root_encrypted == 'no' {
     fail('Please enable full disk encryption and try again')
   }
-
-  # node versions
-  nodejs::version { 'v0.12': }
-
-  # default ruby version
-  ruby::version { '2.1.2': }
 
   # common, useful packages
   package {
