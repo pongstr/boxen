@@ -18,6 +18,12 @@ class groups::osiris {
   include sourcetree
   include python
   include boot2docker
+  include zsh
+
+  package { 'vim':
+    ensure          => present,
+    install_options => ['--override-system-vi']
+  }
 
   mysql::db { 'database': }
 
