@@ -144,6 +144,12 @@ GITHUBTARBALL
     sudo (1.0.0)
 
 GITHUBTARBALL
+<<<<<<< HEAD
+  remote: boxen/puppet-vagrant
+  specs:
+    vagrant (3.3.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-vlc
   specs:
     vlc (1.1.0)
@@ -212,6 +218,10 @@ DEPENDENCIES
   stdlib (= 4.2.1)
   sublime_text (= 1.1.0)
   sudo (= 1.0.0)
+<<<<<<< HEAD
+  vagrant (= 3.3.0)
+=======
+>>>>>>> master
   vlc (= 1.1.0)
   webstorm (= 1.1.1)
   xquartz (= 1.2.1)
