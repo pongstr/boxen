@@ -21,5 +21,5 @@ class groups::osiris {
     source => 'https://s3.amazonaws.com/github-ops/vagrant/squeeze64-6.0.7-vmware_fusion.box'
   }
 
-  #  package { 'boot2docker': provider => 'homebrew' }
+  include boot2docker
 }
