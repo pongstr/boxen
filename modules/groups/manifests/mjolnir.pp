@@ -17,7 +17,7 @@ class groups::mjolnir {
 
   # TODO: Uncomment for first run
   # For the guys saving battery life, make sure
-  services are only running when its needed.
+  # services are only running when its needed.
   service { 'mongodb': ensure => 'stopped', }
   service { 'nginx': ensure => 'stopped', }
   service { 'dev.nginx': ensure => 'stopped', }
