@@ -139,14 +139,14 @@ GITHUBTARBALL
     sublime_text (1.1.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-virtualbox
+  specs:
+    sudo (1.0.13)
+
+GITHUBTARBALL
   remote: boxen/puppet-sudo
   specs:
     sudo (1.0.0)
-
-GITHUBTARBALL
-  remote: boxen/puppet-virtualbox
-  specs:
-    virtualbox (1.0.13)
 
 GITHUBTARBALL
   remote: boxen/puppet-vlc
@@ -216,9 +216,8 @@ DEPENDENCIES
   stdlib (= 4.2.1)
   sublime_text (= 1.1.0)
   sudo (= 1.0.0)
-  virtualbox (= 1.0.13)
   vlc (= 1.1.0)
-  xquartz (= 1.2.1)
+  virtualbox (= 1.0.13)
   webstorm (= 1.1.1)
   xquartz (= 1.2.1)
   zsh (= 1.0.0)

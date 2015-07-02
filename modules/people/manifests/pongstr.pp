@@ -4,12 +4,17 @@ class people::pongstr {
   # Front-end Developer Classification
   require groups::mjolnir
 
+  package { 'vim':
+    ensure          => present,
+    install_options => ['--override-system-vi']
+  }
+
   notify { "Hello ${::boxen_user}, Let's get you bootstrapped.": }
   notify { "We're now going to run the setup to make you feel at home.": }
 
   $home     = "/Users/${::boxen_user}"
   $projects = "${home}/Projects"
-  $dotfiles = "${home}/dotfiles"
+  $dotfiles = "${home}/.dotfiles"
   $ohmyzsh  = "${home}/.oh-my-zsh"
 
   # Initialize Dotfiles Location
@@ -19,9 +24,10 @@ class people::pongstr {
 
   # Fetch Dotfiles from Repository
   repository { $dotfiles:
-    ensure  => 'origin/boxen',
-    source  => 'pongstr/dotfiles',
-    require => File[$dotfiles],
+    path     => $dotfiles,
+    ensure   => 'origin/boxen',
+    source   => 'pongstr/dotfiles',
+    provider => 'git',
   }
 
   # Create Vim Directory for all vim related stuff
