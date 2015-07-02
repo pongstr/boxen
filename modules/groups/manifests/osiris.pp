@@ -8,4 +8,5 @@ include chrome::canary
 include atom
 include vlc
 include virtualbox
+include iterm2::stable
 }
