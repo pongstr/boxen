@@ -14,6 +14,9 @@ class groups::osiris {
   include iterm2::stable
   include mysql
   include github_for_mac
+  include boot2docker
+  include sourcetree
+  include python
 
   mysql::db { 'database': }
 
@@ -21,5 +24,5 @@ class groups::osiris {
     source => 'https://s3.amazonaws.com/github-ops/vagrant/squeeze64-6.0.7-vmware_fusion.box'
   }
 
-  #  package { 'boot2docker': provider => 'homebrew' }
+
 }
