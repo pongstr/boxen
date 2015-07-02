@@ -69,6 +69,10 @@ node default {
   # default ruby versions
   ruby::version { '2.1.2': }
 
+  # Taps for Homebrew
+  homebrew::tap { 'homebrew/services': }
+  homebrew::tap { 'caskroom/versions': }
+  homebrew::tap { 'caskroom/fonts': }
 
   # common, useful packages
   package {
