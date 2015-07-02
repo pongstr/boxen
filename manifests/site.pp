@@ -56,7 +56,7 @@ node default {
   include git
   include hub
   include brewcask
-  
+
   # fail if FDE is not enabled
   if $::root_encrypted == 'no' {
     fail('Please enable full disk encryption and try again')
@@ -67,6 +67,11 @@ node default {
 
   # default ruby versions
   ruby::version { '2.1.2': }
+
+  # Taps for Homebrew
+  homebrew::tap { 'homebrew/services': }
+  homebrew::tap { 'caskroom/versions': }
+  homebrew::tap { 'caskroom/fonts': }
 
   # common, useful packages
   package {
