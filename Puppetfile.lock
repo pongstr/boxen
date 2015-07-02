@@ -54,6 +54,11 @@ GITHUBTARBALL
     git (2.7.9)
 
 GITHUBTARBALL
+  remote: boxen/puppet-github_for_mac
+  specs:
+    github_for_mac (1.0.3)
+
+GITHUBTARBALL
   remote: boxen/puppet-go
   specs:
     go (2.1.0)
@@ -144,7 +149,6 @@ GITHUBTARBALL
     sudo (1.0.0)
 
 GITHUBTARBALL
-<<<<<<< HEAD
   remote: boxen/puppet-vagrant
   specs:
     vagrant (3.3.0)
@@ -196,6 +200,7 @@ DEPENDENCIES
   foreman (= 1.2.0)
   gcc (= 2.2.1)
   git (= 2.7.9)
+  github_for_mac (= 1.0.3)
   go (= 2.1.0)
   hipchat (= 1.1.3)
   homebrew (= 1.12.0)
@@ -218,10 +223,7 @@ DEPENDENCIES
   stdlib (= 4.2.1)
   sublime_text (= 1.1.0)
   sudo (= 1.0.0)
-<<<<<<< HEAD
   vagrant (= 3.3.0)
-=======
->>>>>>> master
   vlc (= 1.1.0)
   webstorm (= 1.1.1)
   xquartz (= 1.2.1)
