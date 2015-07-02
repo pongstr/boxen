@@ -13,11 +13,13 @@ class groups::osiris {
   include virtualbox
   include iterm2::stable
   include mysql
-      mysql::db { 'database': }
+  include github_for_mac
 
-      vagrant::box { 'squeeze64/vmware_fusion':
-        source => 'https://s3.amazonaws.com/github-ops/vagrant/squeeze64-6.0.7-vmware_fusion.box'
-      }
+  mysql::db { 'database': }
 
-      package { 'boot2docker': provider => 'homebrew' }
+  vagrant::box { 'squeeze64/vmware_fusion':
+    source => 'https://s3.amazonaws.com/github-ops/vagrant/squeeze64-6.0.7-vmware_fusion.box'
+  }
+
+  #  package { 'boot2docker': provider => 'homebrew' }
 }
