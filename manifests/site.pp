@@ -62,7 +62,6 @@ node default {
     fail('Please enable full disk encryption and try again')
   }
 
-
   # node versions
   nodejs::version { 'v0.12': }
 
