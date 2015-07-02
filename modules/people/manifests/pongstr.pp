@@ -58,7 +58,7 @@ class people::pongstr {
   file { "${home}/.vim/colors/Pongstr Base-16.vim":
     ensure  => link,
     mode    => '0644',
-    target  => "${home}/dotfiles/bin/vim/Pongstr Base-16.vim",
+    target  => "${dotfiles}/bin/vim/Pongstr Base-16.vim",
     require => Repository[$dotfiles],
   }
 
@@ -66,7 +66,7 @@ class people::pongstr {
   file { "${home}/.zshrc":
     ensure  => link,
     mode    => '0755',
-    target  => "${home}/dotfiles/bin/shell/.zshrc",
+    target  => "${dotfiles}/bin/shell/.zshrc",
     require => Repository[$dotfiles],
   }
 
@@ -74,7 +74,7 @@ class people::pongstr {
   file { "${ohmyzsh}/themes/pongstr.zsh-theme":
     ensure  => link,
     mode    => '0755',
-    target  => "${home}/dotfiles/bin/shell/Pongstr Base-16.zsh-theme",
+    target  => "${dotfiles}/bin/shell/Pongstr Base-16.zsh-theme",
     require => Repository[$dotfiles],
   }
 
