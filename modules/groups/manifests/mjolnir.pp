@@ -3,6 +3,7 @@
 class groups::mjolnir {
   notify { 'Hello Mjolnir member, we\'re setting up your shit, sit back and relax.': }
 
+  include atom
   include brewcask
   include chrome
   include chrome::canary

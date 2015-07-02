@@ -17,12 +17,12 @@ class groups::osiris {
   include boot2docker
   include sourcetree
   include python
+  include boot2docker
 
   mysql::db { 'database': }
 
   vagrant::box { 'squeeze64/vmware_fusion':
     source => 'https://s3.amazonaws.com/github-ops/vagrant/squeeze64-6.0.7-vmware_fusion.box'
   }
-
 
 }
