@@ -15,17 +15,23 @@ class groups::mjolnir {
   include webstorm
   include zsh
 
+  # Ruby Global Version
+  # -------------------
+
   # TODO: Uncomment for first run
   # For the guys saving battery life, make sure
   # services are only running when its needed.
   # service { 'mongodb': ensure => 'stopped', }
   # service { 'nginx': ensure => 'stopped', }
 
-  # TODO: Uncomment for first run
-  # Ruby Global Version
-  exec { 'set global ruby version':
-    command => 'rbenv global 2.1.2'
-  }
+  # TODO: Find a way how to run everything
+  # else first before executing the line otherwise
+  # error or warning is thrown: `rbenv` is not
+  # present or something...
+
+  # exec { 'set global ruby version':
+  #   command => 'rbenv global 2.1.2'
+  # }
 
   # TODO: Uncomment for first run
   # Global Ruby Gems
@@ -122,11 +128,6 @@ class groups::mjolnir {
   package { 'robomongo':
     provider => 'brewcask',
     ensure   => 'installed'
-  }
-
-  package { 'vim':
-    ensure          => present,
-    install_options => ['--override-system-vi']
   }
 
   # buggy at the moment, throws
