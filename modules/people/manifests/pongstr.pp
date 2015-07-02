@@ -79,16 +79,16 @@ class people::pongstr {
   }
 
   # Terminal: Install Pongstr Base-16 theme
-  exec { 'Install Pongstr Base-16 Theme for Terminal':
-    command => "open ${dotfiles}/bin/shell/Pongstr Base-16.terminal",
-  }
-
-  exec { 'Set Pongstr Base-16 Theme as the default window setting':
-    command => "defaults write com.apple.terminal 'Default Window Settings' -string 'Pongstr Base-16.terminal'",
-  }
-
-  exec { 'Set Pongstr Base-16 Theme as the default startup window setting':
-    command => "defaults write com.apple.terminal 'Startup Window Settings' -string 'Pongstr Base-16.terminal'",
-  }
+  # exec { 'Install Pongstr Base-16 Theme for Terminal':
+  #   command => "open ${dotfiles}/bin/shell/Pongstr Base-16.terminal",
+  # }
+  #
+  # exec { 'Set Pongstr Base-16 Theme as the default window setting':
+  #   command => "defaults write com.apple.terminal 'Default Window Settings' -string 'Pongstr Base-16.terminal'",
+  # }
+  #
+  # exec { 'Set Pongstr Base-16 Theme as the default startup window setting':
+  #   command => "defaults write com.apple.terminal 'Startup Window Settings' -string 'Pongstr Base-16.terminal'",
+  # }
 
 }
