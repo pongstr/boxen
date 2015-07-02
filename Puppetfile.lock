@@ -144,6 +144,11 @@ GITHUBTARBALL
     vlc (1.1.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-webstorm
+  specs:
+    webstorm (1.1.1)
+
+GITHUBTARBALL
   remote: boxen/puppet-xquartz
   specs:
     xquartz (1.2.1)
@@ -201,6 +206,7 @@ DEPENDENCIES
   sublime_text (= 1.1.0)
   sudo (= 1.0.0)
   vlc (= 1.1.0)
+  webstorm (= 1.1.1)
   xquartz (= 1.2.1)
   zsh (= 1.0.0)
 

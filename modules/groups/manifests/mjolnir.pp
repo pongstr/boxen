@@ -6,16 +6,63 @@ class groups::mjolnir {
   include brewcask
   include chrome
   include chrome::canary
-  include chrome::chromium
   include dashlane
   include firefox
   include hipchat
+  include nginx
   include mongodb
-  # include osx
   include sublime_text
+  include webstorm
   include zsh
 
+  # TODO: Uncomment for first run
+  # For the guys saving battery life, make sure
+  # services are only running when its needed.
+  # service { 'mongodb': ensure => 'stopped', }
+  # service { 'nginx': ensure => 'stopped', }
+  # service { 'dev.nginx': ensure => 'stopped', }
+
+  # TODO: Uncomment for first run
+  # Ruby Global Version
+  # exec { 'set global ruby version':
+  #   command => 'rbenv global 2.1.2'
+  # }
+
+  # TODO: Uncomment for first run
+  # Global Ruby Gems
+  # ----------------
+  # make sure to specify `ruby_version`, using `*`
+  # will install all gems on all versions that are installed
+  ruby_gem { 'bundler for all rubies':
+    gem          => 'bundler',
+    version      => '~> 1.0',
+    ruby_version => '2.1.2',
+  }
+
+  ruby_gem { 'bootstrap sass':
+    gem          => 'bootstrap-sass',
+    ruby_version => '2.1.2',
+  }
+
+  ruby_gem { 'sass compass':
+    gem          => 'compass',
+    ruby_version => '2.1.2',
+  }
+
+  ruby_gem { 'zurb foundation':
+    gem          => 'foundation',
+    ruby_version => '2.1.2',
+  }
+
+  ruby_gem { 'github-pages':
+    gem          => 'github-pages',
+    ruby_version => '2.1.2',
+  }
+
+
+
   # Node.js Global Version
+  # ----------------
   class { 'nodejs::global':
     version => 'v0.12.5'
   }
@@ -78,8 +125,21 @@ class groups::mjolnir {
     ensure   => 'installed'
   }
 
+  package { 'vim':
+    ensure          => present,
+    install_options => ['--override-system-vi']
+  }
+
   # buggy at the moment, throws
   # Error: Execution of 'brew cask install github' returned 1
   # package { 'github': provider => 'brewcask' }
+
+  # Oh-My-ZSH
+  exec { 'install oh-my-zsh plugin':
+    command => "curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh",
+    onlyif => [
+      "test ! -d ${home}/.oh-my-zsh"
+    ]
+  }
 
 }
