@@ -12,7 +12,7 @@ class groups::mjolnir {
   include nginx
   include mongodb
   include sublime_text
-  include webstorm
+  include webstorm::yosemite
   include zsh
 
   # Ruby Global Version
