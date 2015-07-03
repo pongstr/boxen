@@ -31,4 +31,19 @@ class groups::osiris {
     source => 'https://s3.amazonaws.com/github-ops/vagrant/squeeze64-6.0.7-vmware_fusion.box'
   }
 
+  package { 'mysqlworkbench':
+    provider => 'brewcask',
+    install_options => [
+      '--force',
+      '--no-binaries',
+    ]
+  }
+
+  package { 'atom':
+    provider => 'brewcask',
+    install_options => [
+      '--force',
+      '--no-binaries',
+    ]
+  }
 }
