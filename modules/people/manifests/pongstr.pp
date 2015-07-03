@@ -43,7 +43,6 @@ class people::pongstr {
   # Create Vim Directory for all vim related stuff
   $vim = [
     "${home}/.vim",
-    "${home}/.vim/.viminfo",
     "${home}/.vim/backups",
     "${home}/.vim/colors",
     "${home}/.vim/swaps",
@@ -55,6 +54,7 @@ class people::pongstr {
     ensure => directory,
     owner => $boxen_user,
     group => 'staff',
+    mode  => '0755',
   }
 
   # Vim: Link .vimrc from pongstr/dotfiles
