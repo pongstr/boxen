@@ -169,11 +169,6 @@ GITHUBTARBALL
     vlc (1.1.0)
 
 GITHUBTARBALL
-  remote: boxen/puppet-webstorm
-  specs:
-    webstorm (1.1.1)
-
-GITHUBTARBALL
   remote: boxen/puppet-xquartz
   specs:
     xquartz (1.2.1)
@@ -187,6 +182,11 @@ GITHUBTARBALL
   remote: femee24/puppet-boot2docker
   specs:
     boot2docker (1.0.0)
+
+GITHUBTARBALL
+  remote: itsvicsoto-boxen/puppet-webstorm
+  specs:
+    webstorm (1.1.2)
 
 GITHUBTARBALL
   remote: puppetlabs/puppetlabs-inifile
@@ -243,7 +243,7 @@ DEPENDENCIES
   sudo (= 1.0.0)
   vagrant (= 3.3.0)
   vlc (= 1.1.0)
-  webstorm (= 1.1.1)
+  webstorm (= 1.1.2)
   xquartz (= 1.2.1)
   zsh (= 1.0.0)
 
