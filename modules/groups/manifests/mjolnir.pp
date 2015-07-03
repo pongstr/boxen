@@ -3,7 +3,6 @@
 class groups::mjolnir {
   notify { 'Hello Mjolnir member, we\'re setting up your shit, sit back and relax.': }
 
-  include atom
   include brewcask
   include chrome
   include chrome::canary
@@ -128,7 +127,16 @@ class groups::mjolnir {
 
   package { 'robomongo':
     provider => 'brewcask',
-    ensure   => 'installed'
+    ensure   => installed
+  }
+
+  package { 'atom': 
+    provider => 'brewcask',
+    ensure   => installed,
+    install_options => [
+      '--force',
+      '--no-binaries',
+    ]
   }
 
   # buggy at the moment, throws
