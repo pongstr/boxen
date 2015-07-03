@@ -130,7 +130,7 @@ class groups::mjolnir {
     ensure   => installed
   }
 
-  package { 'atom': 
+  package { 'atom':
     provider => 'brewcask',
     ensure   => installed,
     install_options => [
@@ -151,4 +151,7 @@ class groups::mjolnir {
     ]
   }
 
+  include projects::mjolnir::apiexplorer
+  include projects::mjolnir::coder.io
+  include projects::mjolnir::uikit
 }
