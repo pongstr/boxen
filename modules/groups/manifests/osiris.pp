@@ -22,7 +22,7 @@ class groups::osiris {
 
   package { 'vim':
     ensure          => present,
-    install_options => ['--override-system-vi']
+  #  install_options => ['--override-system-vi']
   }
 
   mysql::db { 'database': }

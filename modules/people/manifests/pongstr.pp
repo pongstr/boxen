@@ -16,6 +16,7 @@ class people::pongstr {
   $projects = "${home}/Projects"
   $dotfiles = "${home}/.dotfiles"
   $ohmyzsh  = "${home}/.oh-my-zsh"
+  $sublime  = "${home}/Library/Application Support/Sublime Text 3/Packages/"
 
   # Initialize Dotfiles Location
   file { $dotfiles:
@@ -30,10 +31,18 @@ class people::pongstr {
     provider => 'git',
   }
 
+  # Fetch Custom Spacegray Theme
+  repository { $sublime:
+    path     => "${sublime}/Theme - Spacegray",
+    ensure   => 'origin/master',
+    source   => 'pongstr/spacegray',
+    provider => 'git',
+  }
+
+
   # Create Vim Directory for all vim related stuff
   $vim = [
     "${home}/.vim",
-    "${home}/.vim/.viminfo",
     "${home}/.vim/backups",
     "${home}/.vim/colors",
     "${home}/.vim/swaps",
@@ -45,6 +54,7 @@ class people::pongstr {
     ensure => directory,
     owner => $boxen_user,
     group => 'staff',
+    mode  => '0755',
   }
 
   # Vim: Link .vimrc from pongstr/dotfiles
@@ -77,6 +87,32 @@ class people::pongstr {
     target  => "${dotfiles}/bin/shell/Pongstr Base-16.zsh-theme",
     require => Repository[$dotfiles],
   }
+
+
+  file { "${sublime}/User/Preferences.sublime-settings":
+    ensure => present,
+    mode   => '0755',
+    group   => 'staff',
+    source  => "${dotfiles}/bin/subl/Preferences.sublime-settings",
+    require => Repository[$dotfiles],
+  }
+
+  file { "${sublime}/User/Default (OSX).sublime-keymap":
+    ensure => present,
+    mode   => '0755',
+    group   => 'staff',
+    source  => "${dotfiles}/bin/subl/Default (OSX).sublime-keymap",
+    require => Repository[$dotfiles],
+  }
+
+  file { "${sublime}/User/Package Control.sublime-settings":
+    ensure  => present,
+    mode    => '0755',
+    group   => 'staff',
+    source   => "${dotfiles}/bin/subl/Package Control.sublime-settings",
+    require => Repository[$dotfiles],
+  }
+
 
   # Terminal: Install Pongstr Base-16 theme
   # exec { 'Install Pongstr Base-16 Theme for Terminal':
