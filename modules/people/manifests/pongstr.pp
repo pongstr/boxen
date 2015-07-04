@@ -127,4 +127,15 @@ class people::pongstr {
   #   command => "defaults write com.apple.terminal 'Startup Window Settings' -string 'Pongstr Base-16.terminal'",
   # }
 
+
+  # TODO: Uncomment for first run
+  # For the guys saving battery life, make sure
+  # services are only running when its needed.
+  service { 'dev.mongodb': ensure => 'stopped', }
+  service { 'dev.nginx': ensure => 'stopped', }
+
+  # Initialize Projects
+  include projects::mjolnir::apiexplorer
+  include projects::mjolnir::coder.io
+  include projects::mjolnir::uikit
 }
