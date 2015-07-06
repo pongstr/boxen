@@ -25,4 +25,10 @@ class groups::vishnu {
     provider => 'appdmg',
     source   => 'http://nchc.dl.sourceforge.net/project/soapui/soapui/5.2.0/SoapUI-5.2.0.dmg'
   }
+
+  package { 'sqlpower architect':
+    ensure   => installed,
+    provider => 'zip',
+    source   => 'http://download.sqlpower.ca/architect/1.0.7/community/SQL-Power-Architect-OSX-1.0.7.tar.gz'
+  }
 }
