@@ -43,6 +43,7 @@ class groups::vishnu {
     ]
   }
   package { 'groovy':
-    provider => 'brew',
+    provider => 'homebrew',
+    ensure => 'latest'
   }
 }
