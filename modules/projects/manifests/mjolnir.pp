@@ -1,6 +1,6 @@
 class projects::mjolnir {
 
-  boxen::project { 'coder.io':
+  boxen::project { 'coderio':
     mongodb  => true,
     nodejs   => 'v0.12.5',
     source   => 'git@bitbucket.org:torodev/coder.io.git'
