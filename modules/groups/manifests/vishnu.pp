@@ -19,13 +19,13 @@ class groups::vishnu {
     ]
   }
   include netbeans
-  package { 'netbeans':
-    provider => 'brewcask',
-    install_options => [
-      '--force',
-      '--no-binaries',
-    ]
-  }
+  #package { 'netbeans':
+  #  provider => 'brewcask',
+  #  install_options => [
+  #    '--force',
+  #    '--no-binaries',
+  #  ]
+  #}
 #sts
   package { 'sts':
     provider => 'brewcask',
