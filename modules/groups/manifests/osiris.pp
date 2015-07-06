@@ -8,7 +8,6 @@ class groups::osiris {
   include hipchat
   include dashlane
   include sublime_text
-  #include atom
   include vlc
   include virtualbox
   include iterm2::stable
@@ -20,10 +19,7 @@ class groups::osiris {
   include boot2docker
   include zsh
 
-  package { 'vim':
-    ensure          => present,
-  #  install_options => ['--override-system-vi']
-  }
+  package { 'vim': ensure => present, }
 
   mysql::db { 'database': }
 

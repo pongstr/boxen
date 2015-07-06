@@ -8,7 +8,6 @@ class groups::vishnu {
   include dashlane
   include hipchat
   include sublime_text
-
   include java
 
   # include eclipse::jee # installable, but fails at `chown`
@@ -19,12 +18,31 @@ class groups::vishnu {
       '--no-binaries',
     ]
   }
-  #include netbeans
+  include netbeans
   package { 'netbeans':
     provider => 'brewcask',
     install_options => [
       '--force',
       '--no-binaries',
     ]
+  }
+#sts
+  package { 'sts':
+    provider => 'brewcask',
+    install_options => [
+      '--force',
+      '--no-binaries',
+    ]
+  }
+
+  package { 'dbvisualizer':
+    provider => 'brewcask',
+    install_options => [
+      '--force',
+      '--no-binaries',
+    ]
+  }
+  package { 'groovy':
+    provider => 'brew',
   }
 }
