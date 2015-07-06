@@ -3,26 +3,13 @@
 class groups::mjolnir {
   notify { 'Hello Mjolnir member, we\'re setting up your shit, sit back and relax.': }
 
-  include brewcask
-  include chrome
-  include chrome::canary
-  include dashlane
-  include firefox
-  include hipchat
   include nginx
   include mongodb
-  include sublime_text
   include webstorm::yosemite
   include zsh
 
   # Ruby Global Version
   # -------------------
-
-  # TODO: Uncomment for first run
-  # For the guys saving battery life, make sure
-  # services are only running when its needed.
-  # service { 'mongodb': ensure => 'stopped', }
-  # service { 'nginx': ensure => 'stopped', }
 
   # TODO: Find a way how to run everything
   # else first before executing the line otherwise
@@ -125,23 +112,96 @@ class groups::mjolnir {
     node_version => 'v0.12.5'
   }
 
-  package { 'robomongo':
-    provider => 'brewcask',
-    ensure   => installed
-  }
-
+  # Install Native Apps via Brew-Cask
+  # Apps are then installed in /opt/Caskroom
+  # but are symlinked to /Applications Directory
   package { 'atom':
     provider => 'brewcask',
     ensure   => installed,
     install_options => [
       '--force',
       '--no-binaries',
+      '--appdir=/Applications'
     ]
   }
 
-  # buggy at the moment, throws
-  # Error: Execution of 'brew cask install github' returned 1
-  # package { 'github': provider => 'brewcask' }
+  # Google Chrome
+  package { 'chrome':
+    provider        => 'brewcask',
+    ensure          => installed,
+    install_options => [
+      '--force',
+      '--no-binaries',
+      '--appdir=/Applications'
+    ]
+  }
+
+  # Google Chrome Canary
+  package { 'chrome-canary':
+    provider        => 'brewcask',
+    ensure          => installed,
+    install_options => [
+      '--force',
+      '--no-binaries',
+      '--appdir=/Applications'
+    ]
+  }
+
+  # Dashlane
+  package { 'dashlane':
+    provider        => 'brewcask',
+    ensure          => installed,
+    install_options => [
+      '--force',
+      '--no-binaries',
+      '--appdir=/Applications'
+    ]
+  }
+
+  # Firefox
+  package { 'firefox':
+    provider        => 'brewcask',
+    ensure          => installed,
+    install_options => [
+      '--force',
+      '--no-binaries',
+      '--appdir=/Applications'
+    ]
+  }
+
+
+  # Hipchat
+  package { 'hipchat':
+    provider        => 'brewcask',
+    ensure          => installed,
+    install_options => [
+      '--force',
+      '--no-binaries',
+      '--appdir=/Applications'
+    ]
+  }
+
+  # RoboMongo
+  package { 'robomongo':
+    provider        => 'brewcask',
+    ensure          => installed,
+    install_options => [
+      '--force',
+      '--no-binaries',
+      '--appdir=/Applications'
+    ]
+  }
+
+  # Sublime Text 3
+  package { 'sublime-text-3':
+    provider        => 'brewcask',
+    ensure          => installed,
+    install_options => [
+      '--force',
+      '--no-binaries',
+      '--appdir=/Applications'
+    ]
+  }
 
   # Oh-My-ZSH
   exec { 'install oh-my-zsh plugin':
@@ -150,8 +210,4 @@ class groups::mjolnir {
       "test ! -d ${home}/.oh-my-zsh"
     ]
   }
-
-  include projects::mjolnir::apiexplorer
-  include projects::mjolnir::coder.io
-  include projects::mjolnir::uikit
 }

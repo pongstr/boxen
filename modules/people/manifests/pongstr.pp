@@ -113,18 +113,41 @@ class people::pongstr {
     require => Repository[$dotfiles],
   }
 
+  # OSX Preferences
+  # ---------------
 
-  # Terminal: Install Pongstr Base-16 theme
-  # exec { 'Install Pongstr Base-16 Theme for Terminal':
-  #   command => "open ${dotfiles}/bin/shell/Pongstr Base-16.terminal",
-  # }
-  #
-  # exec { 'Set Pongstr Base-16 Theme as the default window setting':
-  #   command => "defaults write com.apple.terminal 'Default Window Settings' -string 'Pongstr Base-16.terminal'",
-  # }
-  #
-  # exec { 'Set Pongstr Base-16 Theme as the default startup window setting':
-  #   command => "defaults write com.apple.terminal 'Startup Window Settings' -string 'Pongstr Base-16.terminal'",
-  # }
+  # Enable Right-Click on Magic Mouse
+  class { 'osx::mouse::button_mode': mode => 2 }
+  class { 'osx::mouse::swipe_between_pages': enabled => true }
 
+  # Setting a blazingly fast keyboard repeat rate
+  # (ain't nobody got time fo special chars while coding!)
+  class { 'osx::global::key_repeat_rate': rate => 0 }
+
+  # Set Dock Icon Size to 32px
+  class { 'osx::dock::icon_size': size => 32 }
+
+  # Hot Corners
+  class { 'osx::dock::hot_corners':
+    bottom_right => "Start Screen Saver"
+  }
+
+  # One Shot Defaults
+  include osx::global::disable_autocorrect
+  include osx::finder::enable_quicklook_text_selection
+  include osx::global::expand_save_dialog
+  include osx::safari::enable_developer_mode
+  include osx::finder::show_hard_drives_on_desktop
+  include osx::global::tap_to_click
+
+  # TODO: Uncomment for first run
+  # For the guys saving battery life, make sure
+  # services are only running when its needed.
+  service { 'dev.mongodb': ensure => 'stopped', }
+  service { 'dev.nginx': ensure => 'stopped', }
+
+  # Initialize Projects
+  include projects::mjolnir::apiexplorer
+  include projects::mjolnir::coderio
+  include projects::mjolnir::uikit
 }
