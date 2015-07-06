@@ -148,6 +148,6 @@ class people::pongstr {
 
   # Initialize Projects
   include projects::mjolnir::apiexplorer
-  include projects::mjolnir::coder.io
+  include projects::mjolnir::coderio
   include projects::mjolnir::uikit
 }
