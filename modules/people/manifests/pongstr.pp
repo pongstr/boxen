@@ -3,7 +3,10 @@ class people::pongstr {
 
   # Front-end Developer Classification
   require groups::mjolnir
-  require projects::mjolnir
+
+  # Projects Cloning will fail since projects
+  # clone via git ssh
+  # require projects::mjolnir
 
   package { 'vim':
     ensure          => present,
