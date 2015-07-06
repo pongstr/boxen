@@ -16,6 +16,7 @@ class groups::vishnu {
   include vlc
   include wget
   include zsh
+  include postgresql
 
 
   package { 'atom':
