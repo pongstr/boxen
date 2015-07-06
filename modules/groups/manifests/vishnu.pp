@@ -12,5 +12,19 @@ class groups::vishnu {
   include java
 
   # include eclipse::jee # installable, but fails at `chown`
-  include netbeans
+  package { 'eclipse-ide':
+    provider => 'brewcask',
+    install_options => [
+      '--force',
+      '--no-binaries',
+    ]
+  }
+  #include netbeans
+  package { 'netbeans':
+    provider => 'brewcask',
+    install_options => [
+      '--force',
+      '--no-binaries',
+    ]
+  }
 }
