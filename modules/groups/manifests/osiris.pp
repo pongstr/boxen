@@ -18,6 +18,7 @@ class groups::osiris {
   include python
   include boot2docker
   include zsh
+  include vagrant
 
   package { 'vim': ensure => present, }
 
@@ -40,6 +41,14 @@ class groups::osiris {
     install_options => [
       '--force',
       '--no-binaries',
+    ]
+  }
+
+  # Oh-My-ZSH
+  exec { 'install oh-my-zsh plugin':
+    command => "curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh",
+    onlyif => [
+      "test ! -d ${home}/.oh-my-zsh"
     ]
   }
 }
