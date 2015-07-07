@@ -19,11 +19,6 @@ GITHUBTARBALL
     chrome (1.2.0)
 
 GITHUBTARBALL
-  remote: boxen/puppet-cyberduck
-  specs:
-    cyberduck (1.0.1)
-
-GITHUBTARBALL
   remote: boxen/puppet-dashlane
   specs:
     dashlane (1.0.1)
@@ -222,6 +217,11 @@ GITHUBTARBALL
   remote: femee24/puppet-boot2docker
   specs:
     boot2docker (1.0.2)
+
+GITHUBTARBALL
+  remote: pongstr/puppet-cyberduck
+  specs:
+    cyberduck (1.0.1)
 
 GITHUBTARBALL
   remote: pongstr/puppet-netbeans
