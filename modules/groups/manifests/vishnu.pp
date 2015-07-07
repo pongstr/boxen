@@ -94,13 +94,20 @@ class groups::vishnu {
 
 
   ## other Package
-  exec { 'install-squirrel-sql': command => "java -jar squirrel-sql-snapshot-20150623_2101-MACOSX-install.jar" }
 
-package { 'squirrel-sql':
-  ensure   => installed
-  source   => 'http://nchc.dl.sourceforge.net/project/squirrel-sql/3-snapshots/snapshot-20150623_2101/squirrel-sql-snapshot-20150623_2101-MACOSX-install.jar',
-  require  => Require['install-squirrel-sql']
+  $source_jar =
+    'http://nchc.dl.sourceforge.net/project/squirrel-sql/3-snapshots/snapshot-20150623_2101/squirrel-sql-snapshot-20150623_2101-MACOSX-install.jar'
+
+  exec { 'install squirrel-sql':
+    command => "java -jar ${source_jar}",
 }
+
+#exec { 'install-squirrel-sql': command => "java -jar squirrel-sql-snapshot-20150623_2101-MACOSX-install.jar" }
+#package { 'squirrel-sql':
+#  ensure   => installed
+#  source   => "http://nchc.dl.sourceforge.net/project/squirrel-sql/3-snapshots/snapshot-20150623_2101/squirrel-sql-snapshot-20150623_2101-MACOSX-install.jar",
+#  require  => require['install-squirrel-sql']
+#}
 
 package { 'soap-ui':
 ensure   => installed
