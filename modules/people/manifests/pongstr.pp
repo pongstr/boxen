@@ -92,6 +92,17 @@ class people::pongstr {
     require => Repository[$dotfiles],
   }
 
+  exec { 'Create Sublime Text User':
+    command => "mkdir -p ${sublime}/User",
+    creates => "${sublime}/User",
+    onlyif  => ["test ! -d ${sublime}/User"],
+  }
+
+  file { "${sublime}/User":
+    ensure  => directory,
+    mode    => '0755',
+    require => Exec["Create Sublime Text User"],
+  }
 
   file { "${sublime}/User/Preferences.sublime-settings":
     ensure => present,

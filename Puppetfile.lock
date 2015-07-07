@@ -174,6 +174,21 @@ GITHUBTARBALL
     sudo (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-sysctl
+  specs:
+    sysctl (1.0.1)
+
+GITHUBTARBALL
+  remote: boxen/puppet-textwrangler
+  specs:
+    textwrangler (1.0.6)
+
+GITHUBTARBALL
+  remote: boxen/puppet-tunnelblick
+  specs:
+    tunnelblick (1.0.7)
+
+GITHUBTARBALL
   remote: boxen/puppet-vagrant
   specs:
     vagrant (3.3.0)
@@ -187,6 +202,11 @@ GITHUBTARBALL
   remote: boxen/puppet-vlc
   specs:
     vlc (1.1.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-wget
+  specs:
+    wget (1.0.1)
 
 GITHUBTARBALL
   remote: boxen/puppet-xquartz
@@ -204,14 +224,14 @@ GITHUBTARBALL
     boot2docker (1.0.2)
 
 GITHUBTARBALL
-  remote: itsvicsoto-boxen/puppet-webstorm
-  specs:
-    webstorm (1.1.2)
-
-GITHUBTARBALL
   remote: pongstr/puppet-netbeans
   specs:
     netbeans (1.0.1)
+
+GITHUBTARBALL
+  remote: pongstr/puppet-webstorm
+  specs:
+    webstorm (1.1.3)
 
 GITHUBTARBALL
   remote: puppetlabs/puppetlabs-inifile
@@ -269,10 +289,14 @@ DEPENDENCIES
   stdlib (= 4.2.1)
   sublime_text (= 1.1.0)
   sudo (= 1.0.0)
+  sysctl (= 1.0.1)
+  textwrangler (= 1.0.6)
+  tunnelblick (= 1.0.7)
   vagrant (= 3.3.0)
   virtualbox (= 1.0.13)
   vlc (= 1.1.0)
-  webstorm (= 1.1.2)
+  webstorm (= 1.1.3)
+  wget (= 1.0.1)
   xquartz (= 1.2.1)
   zsh (= 1.0.0)
 

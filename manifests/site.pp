@@ -70,8 +70,9 @@ node default {
   # node versions
   nodejs::version { 'v0.12': }
 
-  # default ruby versions
-  ruby::version { '2.1.2': }
+  # default ruby version
+  # Should be set by group
+  # ruby::version { '2.1.2': }
 
   # Taps for Homebrew
   homebrew::tap { 'homebrew/services': }
@@ -81,9 +82,16 @@ node default {
   # common, useful packages
   package {
     [
-      'ack',
-      'findutils',
-      'gnu-tar'
+    'ack',
+    'aspell',
+    'autoconf',
+    'automake',
+    'findutils',
+    'gnu-tar',
+    'libmagic',
+    'mpssh',
+    'wget',
+    'unrar'
     ]:
   }
 

@@ -18,9 +18,7 @@ class groups::mjolnir {
 
   # Ruby Global Version
   # -------------------
-  class { 'ruby::global':
-    version => '2.1.2'
-  }
+  class { 'ruby::global': version => '2.1.2' }
 
   # make sure to specify `ruby_version`, using `*`
   # will install all gems on all versions that are installed

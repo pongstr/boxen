@@ -60,7 +60,6 @@ github "xquartz",     "1.2.1"
 
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
-# github "sysctl",      "1.0.1"
 
 github "atom",          "1.2.0"
 github "boot2docker",   "1.0.2", :repo => "femee24/puppet-boot2docker"
@@ -82,11 +81,12 @@ github "postgresql",    "3.0.3"
 github "redis",         "3.1.0"
 github "sourcetree",    "1.0.0"
 github "sublime_text",  "1.1.0"
+github "sysctl",        "1.0.1"
 github "textwrangler",  "1.0.6"
 github "tunnelblick",   "1.0.7"
 github "vagrant",       "3.3.0"
 github "vlc",           "1.1.0"
 github "virtualbox",    "1.0.13"
-github "wget",          ""
-github "webstorm",      "1.1.2", :repo => "pongstr/puppet-webstorm"
+github "wget",          "1.0.1"
+github "webstorm",      "1.1.3", :repo => "pongstr/puppet-webstorm"
 github "zsh",           "1.0.0"
