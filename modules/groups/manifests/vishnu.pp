@@ -21,6 +21,7 @@ class groups::vishnu {
   include springtoolsuite
   include sublime_text
   include textwrangler
+  include vagrant
   include virtualbox
   include wget
   include zsh
