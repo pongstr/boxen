@@ -64,7 +64,7 @@ github "xquartz",     "1.2.1"
 # github "mysql",         "2.0.1"
 # github "postgresql",  "3.0.3"
 # github "redis",       "3.1.0"
-# github "sysctl",      "1.0.1"
+github "sysctl",      "1.0.1"
 
 
 github "atom",          "1.2.0"
