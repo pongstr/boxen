@@ -123,7 +123,7 @@ source   => 'http://download.sqlpower.ca/architect/1.0.7/community/SQL-Power-Arc
 
 package { 'talend':
 ensure => installed,
-provider => 'compressed_app'
+provider => 'compressed_app',
 source => 'http://talend.dreamhosters.com/tos/release/V6.0.0/TOS_DI-20150702_1326-V6.0.0.zip'
 }
 
