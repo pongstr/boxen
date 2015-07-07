@@ -226,7 +226,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: pongstr/puppet-cyberduck
   specs:
-    cyberduck (1.0.1)
+    cyberduck (1.0.2)
 
 GITHUBTARBALL
   remote: pongstr/puppet-netbeans
@@ -264,7 +264,7 @@ DEPENDENCIES
   boxen (= 3.10.4)
   brewcask (= 0.0.6)
   chrome (= 1.2.0)
-  cyberduck (= 1.0.1)
+  cyberduck (= 1.0.2)
   dashlane (= 1.0.1)
   dnsmasq (= 2.0.1)
   eclipse (= 2.5.0)

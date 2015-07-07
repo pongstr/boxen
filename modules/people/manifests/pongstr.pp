@@ -93,9 +93,9 @@ class people::pongstr {
   }
 
   exec { 'Create Sublime Text User':
-    command => "mkdir -p ${sublime}/User",
-    creates => "${sublime}/User",
-    onlyif  => ["test ! -d ${sublime}/User"],
+    command => "mkdir -p ${sublime}User",
+    creates => "${sublime}User",
+    onlyif  => ["test ! -d ${sublime}User"],
   }
 
   file { "${sublime}/User":
