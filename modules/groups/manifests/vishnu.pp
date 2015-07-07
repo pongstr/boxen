@@ -23,7 +23,6 @@ class groups::vishnu {
   include textwrangler
   include vagrant
   include virtualbox
-  include wget
   include zsh
 
   package { 'diffmerge':
