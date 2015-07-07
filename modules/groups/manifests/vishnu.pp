@@ -51,7 +51,7 @@ class groups::vishnu {
   }
 
   package { 'soap-ui':
-    ensure   => installed
+    ensure   => installed,
     provider => 'pkgdmg',
     source   => 'http://nchc.dl.sourceforge.net/project/soapui/soapui/5.2.0/SoapUI-5.2.0.dmg'
   }
