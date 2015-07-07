@@ -12,7 +12,6 @@ class groups::vishnu {
   # include hipchat             # Already included in Site Manifest (manifests/site.pp)
   # include vlc                 # Already included in Site Manifest (manifests/site.pp)
 
-  include boot2docker
   include mysql
   include netbeans::jee
   include postgresql
@@ -23,7 +22,6 @@ class groups::vishnu {
   include textwrangler
   include vagrant
   include virtualbox
-  include zsh
 
   package { 'diffmerge':
     ensure          => installed,
