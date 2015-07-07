@@ -14,9 +14,11 @@ $ sudo chown ${USER}:staff /opt/boxen
 $ git clone https://github.com/pongstr/boxen.git /opt/boxen/repo && cd /opt/boxen/repo
 
 # Run the Bootstrap
+$ ./script/boxen-bootstrap
+
+# Run Boxen
 # @param: --no-fde # skip filevault disk encryption
 # @param: --debug  # see the behind the scene action
-
 $ ./script/boxen
 ```
 
