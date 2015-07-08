@@ -43,15 +43,10 @@ class groups::osiris {
     install_options => ['--no-binaries'],
   }
 
-  package { 'java':
-     ensure          => installed,
-     provider        => 'brewcask',
-   }
-
- package { 'sqldeveloper':
+  package { 'Keynote':
     ensure   => installed,
     provider => 'compressed_app',
-    source   => 'http://192.168.21.151/sqldeveloper-4.1.1.19.59-macosx.app.zip'
+    source   => 'http://192.168.21.151/Keynote.zip'
   }
 
   # Team Osiris must consolidate Databases
