@@ -1,4 +1,4 @@
 class people::femee24 {
-  require groups::osiris
+  require groups::shiva
   notify { 'Hello ${::boxen_user}': }
 }
