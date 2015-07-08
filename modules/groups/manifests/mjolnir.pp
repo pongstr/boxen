@@ -115,11 +115,7 @@ class groups::mjolnir {
   package { 'atom':
     provider => 'brewcask',
     ensure   => installed,
-    install_options => [
-      '--force',
-      '--no-binaries',
-      '--appdir=/Applications'
-    ]
+    install_options => ['--no-binaries']
   }
 
   # RoboMongo
