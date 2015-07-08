@@ -3,6 +3,7 @@
 class groups::shiva {
   notify { 'Hello Shiva member, Let\'s set you up.': }
 
+  include cyberduck
 
   package { 'Keynote':
     ensure   => installed,
