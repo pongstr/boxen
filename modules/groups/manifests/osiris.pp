@@ -28,19 +28,19 @@ class groups::osiris {
   package { 'mysqlworkbench':
     ensure          => installed,
     provider        => 'brewcask',
-    install_options => ['--no-binaries'],
+    install_options => ['--no-binaries','--appdir=/Applications'],
   }
 
   package { 'atom':
     ensure          => installed,
     provider        => 'brewcask',
-    install_options => ['--no-binaries'],
+    install_options => ['--no-binaries','--appdir=/Applications'],
   }
 
   package { 'github':
     ensure          => installed,
     provider        => 'brewcask',
-    install_options => ['--no-binaries'],
+    install_options => ['--no-binaries','--appdir=/Applications'],
   }
 
   package { 'Keynote':
