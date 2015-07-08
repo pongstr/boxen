@@ -3,8 +3,8 @@ class people::jeff322 {
   notify { 'Hello ${::boxen_user}': }
 
   package { 'java':
-     ensure          => installed,
-     provider        => 'brewcask',
+     ensure     => installed,
+     provider   => 'brewcask',
    }
 
   package { 'sqldeveloper':
@@ -12,5 +12,4 @@ class people::jeff322 {
     provider => 'compressed_app',
     source   => 'http://192.168.21.151/sqldeveloper-4.1.1.19.59-macosx.app.zip'
   }
-
 }
