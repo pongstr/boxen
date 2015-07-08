@@ -18,27 +18,27 @@ class groups::shiva {
   package { 'filezilla':
     ensure          => installed,
     provider        => 'brewcask',
-    install_options => ['--no-binaries'],
+    install_options => ['--no-binaries','--appdir=/Applications'],
   }
   package { 'openoffice':
     ensure          => installed,
     provider        => 'brewcask',
-    install_options => ['--no-binaries'],
+    install_options => ['--no-binaries','--appdir=/Applications'],
   }
   package { 'adobe-reader':
     ensure          => installed,
     provider        => 'brewcask',
-    install_options => ['--no-binaries'],
+    install_options => ['--no-binaries','--appdir=/Applications'],
   }
   package { 'yemuzip':
     ensure          => installed,
     provider        => 'brewcask',
-    install_options => ['--no-binaries'],
+    install_options => ['--no-binaries','--appdir=/Applications'],
   }
   package { 'unrarx':
     ensure          => installed,
     provider        => 'brewcask',
-    install_options => ['--no-binaries'],
+    install_options => ['--no-binaries','--appdir=/Applications'],
   }
 
 }

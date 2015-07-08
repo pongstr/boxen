@@ -5,6 +5,6 @@ class people::marinela25 {
   package { 'adobe-creative-cloud':
     ensure          => installed,
     provider        => 'brewcask',
-    install_options => ['--no-binaries'],
+    install_options => ['--appdir=/Applications']
   }
 }
