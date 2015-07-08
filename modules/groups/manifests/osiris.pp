@@ -43,7 +43,11 @@ class groups::osiris {
     install_options => ['--no-binaries'],
   }
 
-
+  package { 'Keynote':
+    ensure   => installed,
+    provider => 'compressed_app',
+    source   => 'http://192.168.21.151/Keynote.zip'
+  }
 
   # Team Osiris must consolidate Databases
   # and set them in `modules/projects/manifests/osiris.pp`
