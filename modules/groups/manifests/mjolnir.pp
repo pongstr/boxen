@@ -120,12 +120,8 @@ class groups::mjolnir {
 
   # RoboMongo
   package { 'robomongo':
-    provider        => 'brewcask',
-    ensure          => installed,
-    install_options => [
-      '--force',
-      '--appdir=/Applications'
-    ]
+    provider => 'brewcask',
+    ensure   => installed,
   }
 
   # Oh-My-ZSH
