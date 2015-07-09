@@ -13,12 +13,31 @@ class groups::mjolnir {
   include chrome::canary
   include cyberduck
   include nginx
-  include mongodb
+  # include mongodb
   include python
   include sublime_text
   include virtualbox
   include webstorm::yosemite
   include zsh
+
+  exec { 'Create MongoDB Data Path':
+    command => "mkdir -p ${home}/.mongodb-data",
+    creates => "${home}/.mongodb-data",
+    onlyif  => ["test ! -d ${home}/.mongodb-data"],
+  }
+
+  exec { 'Create MongoDB Log Path':
+    command => "mkdir -p ${home}/.mongodb-logs",
+    creates => "${home}/.mongodb-logs",
+    onlyif  => ["test ! -d ${home}/.mongodb-logs"],
+  }
+
+  class { 'mongodb':
+    host    => '127.0.0.1',
+    port    => '27017',
+    logdir  => "${home}/.mongodb-logs",
+    datadir => "${home}/.mongodb-data",
+  }
 
   # Ruby Global Version
   # -------------------

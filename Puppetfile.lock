@@ -224,11 +224,6 @@ GITHUBTARBALL
     diffmerge (1.0.0)
 
 GITHUBTARBALL
-  remote: devcsrj/puppet-soapui
-  specs:
-    soapui (1.0.0)
-
-GITHUBTARBALL
   remote: femee24/puppet-boot2docker
   specs:
     boot2docker (1.0.2)
@@ -306,7 +301,6 @@ DEPENDENCIES
   redis (= 3.1.0)
   repository (= 2.4.1)
   ruby (= 8.5.2)
-  soapui (= 1.0.0)
   solr (= 1.0.4)
   sourcetree (= 1.0.0)
   springtoolsuite (= 1.1.0)
