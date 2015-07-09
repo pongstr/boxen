@@ -73,11 +73,11 @@ class groups::vishnu {
     source   => $DL_SQL_PWRARC
   }
 
-  package { 'talend':
-    ensure   => installed,
-    provider => 'compressed_app',
-    source   => $DL_TALEND
-  }
+  # package { 'talend':
+  #  ensure   => installed,
+  #  provider => 'compressed_app',
+  #  source   => $DL_TALEND
+  # }
 
   # Java Versions
   # TODO: @devcsrj
