@@ -7,7 +7,6 @@ class groups::vishnu {
   # ======= Package/Installer links ========
   $DL_SQUIRREL    = 'http://nchc.dl.sourceforge.net/project/squirrel-sql/3-snapshots/snapshot-20150623_2101/squirrel-sql-snapshot-20150623_2101-MACOSX-install.jar'
   $DL_POSTGRES    = 'https://github.com/PostgresApp/PostgresApp/releases/download/9.4.4.0/Postgres-9.4.4.0.zip'
-  $DL_SOAPUI      = 'http://nchc.dl.sourceforge.net/project/soapui/soapui/5.2.0/SoapUI-5.2.0.dmg'
   $DL_SQL_PWRARC  = 'http://download.sqlpower.ca/architect/1.0.7/community/SQL-Power-Architect-OSX-1.0.7.tar.gz'
   $DL_TALEND      = 'http://talend.dreamhosters.com/tos/release/V6.0.0/TOS_DI-20150702_1326-V6.0.0.zip'
 
@@ -17,6 +16,7 @@ class groups::vishnu {
   include netbeans::jee
   include redis
   include solr
+  include soapui
   include springtoolsuite
   include sublime_text
   include textwrangler
@@ -53,12 +53,6 @@ class groups::vishnu {
     ensure          => installed,
     provider        => 'brewcask',
     install_options => []
-  }
-
-  package { 'soap-ui':
-    ensure   => installed,
-    provider => 'pkgdmg',
-    source   => $DL_SOAPUI
   }
 
   # package { 'sqlpower architect':
