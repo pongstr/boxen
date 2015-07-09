@@ -23,6 +23,14 @@ class groups::vishnu {
   include vagrant
   include virtualbox
 
+  package { 'eclipse-jee':
+    ensure          => installed,
+    provider        => 'brewcask',
+    install_options => [
+      '--appdir=/Applications'
+    ],
+  }
+
   package { 'diffmerge':
     ensure          => installed,
     provider        => 'pkgdmg',
