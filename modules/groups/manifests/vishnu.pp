@@ -1,38 +1,46 @@
 # Vishnu: Installation Setup for Senior Backend Developers
 
 class groups::vishnu {
+  
   notify { 'Hello Vishnu member, Let\'s set you up.': }
 
-  $squirrel = 'http://nchc.dl.sourceforge.net/project/squirrel-sql/3-snapshots/snapshot-20150623_2101/squirrel-sql-snapshot-20150623_2101-MACOSX-install.jar'
+  # ======= Package/Installer links ========
+  $DL_SQUIRREL    = 'http://nchc.dl.sourceforge.net/project/squirrel-sql/3-snapshots/snapshot-20150623_2101/squirrel-sql-snapshot-20150623_2101-MACOSX-install.jar'
+  $DL_POSTGRES    = 'https://github.com/PostgresApp/PostgresApp/releases/download/9.4.4.0/Postgres-9.4.4.0.zip'
+  $DL_SQL_PWRARC  = 'http://download.sqlpower.ca/architect/1.0.7/community/SQL-Power-Architect-OSX-1.0.7.tar.gz'
+  $DL_TALEND      = 'http://talend.dreamhosters.com/tos/release/V6.0.0/TOS_DI-20150702_1326-V6.0.0.zip'
 
-  # include chrome              # Already included in Site Manifest (manifests/site.pp)
-  # include dashlane            # Already included in Site Manifest (manifests/site.pp)
-  # include firefox             # Already included in Site Manifest (manifests/site.pp)
-  # include github_for_mac      # Deprecated as per github.com/boxen/puppet-github_for_mac
-  # include hipchat             # Already included in Site Manifest (manifests/site.pp)
-  # include vlc                 # Already included in Site Manifest (manifests/site.pp)
-
+  # ======= @see repo/puppet-zzzz =========
+  include diffmerge
   include mysql
   include netbeans::jee
-  include postgresql
   include redis
   include solr
+  include soapui
   include springtoolsuite
   include sublime_text
   include textwrangler
   include vagrant
   include virtualbox
 
-  package { 'diffmerge':
+  package { 'eclipse-jee':
     ensure          => installed,
     provider        => 'brewcask',
-    install_options => []
+    install_options => [
+      '--appdir=/Applications'
+    ],
   }
 
   package { 'dbvisualizer':
     ensure          => installed,
     provider        => 'brewcask',
     install_options => []
+  }
+
+  package { 'postgres':
+    ensure   => installed,
+    provider => 'compressed_app',
+    source   => $DL_POSTGRES
   }
 
   package { 'pgadmin3':
@@ -47,23 +55,17 @@ class groups::vishnu {
     install_options => []
   }
 
-  package { 'soap-ui':
-    ensure   => installed,
-    provider => 'pkgdmg',
-    source   => 'http://nchc.dl.sourceforge.net/project/soapui/soapui/5.2.0/SoapUI-5.2.0.dmg'
-  }
+  # package { 'sqlpower architect':
+  #   ensure   => installed,
+  #   provider => 'compressed_app',
+  #   source   => $DL_SQL_PWRARC
+  # }
 
-  package { 'sqlpower architect':
-    ensure   => installed,
-    provider => 'compressed_app',
-    source   => 'http://download.sqlpower.ca/architect/1.0.7/community/SQL-Power-Architect-OSX-1.0.7.tar.gz'
-  }
-
-  package { 'talend':
-    ensure   => installed,
-    provider => 'compressed_app',
-    source   => 'http://talend.dreamhosters.com/tos/release/V6.0.0/TOS_DI-20150702_1326-V6.0.0.zip'
-  }
+  # package { 'talend':
+  #  ensure   => installed,
+  #  provider => 'compressed_app',
+  #  source   => $DL_TALEND
+  # }
 
   # Java Versions
   # TODO: @devcsrj
