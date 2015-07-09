@@ -66,7 +66,7 @@ github "boot2docker",     "1.0.2", :repo => "femee24/puppet-boot2docker"
 github "chrome",          "1.2.0"
 github "cyberduck",       "1.0.2", :repo => "pongstr/puppet-cyberduck"
 github "dashlane",        "1.0.1"
-github "diffmerge",       "1.0.0", :repo => "devcsrj/diffmerge"
+github "diffmerge",       "1.0.0", :repo => "devcsrj/puppet-diffmerge"
 github "eclipse",         "2.5.0"   # Deprecated: Use Spring Tool Suite instead
 github "elasticsearch",   "2.7.2"
 github "firefox",         "1.2.3"
