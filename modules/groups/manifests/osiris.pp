@@ -17,6 +17,7 @@ class groups::osiris {
   include python
   include sourcetree
   include sublime_text
+  include tunnelblick
   include virtualbox
   include zsh
 
@@ -38,6 +39,12 @@ class groups::osiris {
   }
 
   package { 'github':
+    ensure          => installed,
+    provider        => 'brewcask',
+    install_options => ['--no-binaries','--appdir=/Applications'],
+  }
+
+  package { 'evernote':
     ensure          => installed,
     provider        => 'brewcask',
     install_options => ['--no-binaries','--appdir=/Applications'],
