@@ -1,4 +1,4 @@
-# Osiris: Installation Setup for Front-end Developers
+# Mjolnir: Installation Setup for Front-end Developers
 
 class groups::mjolnir {
   require nodejs
@@ -13,7 +13,6 @@ class groups::mjolnir {
   include chrome::canary
   include cyberduck
   include nginx
-  # include mongodb
   include python
   include sublime_text
   include virtualbox
@@ -157,7 +156,6 @@ class groups::mjolnir {
 
 
   # Fetch Package Control from Repository
-  notify { "Curl ${subPkgCtrl}": }
   exec { 'SublimeText Package':
     command => "curl -o ${sublime}Installed Packages/Package Control.sublime-package ${subPkgCtrl}",
   }
