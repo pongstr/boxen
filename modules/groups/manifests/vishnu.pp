@@ -4,16 +4,14 @@ class groups::vishnu {
   
   notify { 'Hello Vishnu member, Let\'s set you up.': }
 
-  # ======= Package/Installer links ========
   $DL_SQUIRREL    = 'http://nchc.dl.sourceforge.net/project/squirrel-sql/3-snapshots/snapshot-20150623_2101/squirrel-sql-snapshot-20150623_2101-MACOSX-install.jar'
-  $DL_POSTGRES    = 'https://github.com/PostgresApp/PostgresApp/releases/download/9.4.4.0/Postgres-9.4.4.0.zip'
-  $DL_SQL_PWRARC  = 'http://download.sqlpower.ca/architect/1.0.7/community/SQL-Power-Architect-OSX-1.0.7.tar.gz'
   $DL_TALEND      = 'http://talend.dreamhosters.com/tos/release/V6.0.0/TOS_DI-20150702_1326-V6.0.0.zip'
 
-  # ======= @see repo/puppet-zzzz =========
   include diffmerge
+  include sqlpowerarchitect
   include mysql
   include netbeans::jee
+  include postgresapp
   include redis
   include solr
   include soapui
@@ -37,12 +35,6 @@ class groups::vishnu {
     install_options => []
   }
 
-  package { 'postgres':
-    ensure   => installed,
-    provider => 'compressed_app',
-    source   => $DL_POSTGRES
-  }
-
   package { 'pgadmin3':
     ensure          => installed,
     provider        => 'brewcask',
@@ -55,71 +47,46 @@ class groups::vishnu {
     install_options => []
   }
 
-  # package { 'sqlpower architect':
-  #   ensure   => installed,
-  #   provider => 'compressed_app',
-  #   source   => $DL_SQL_PWRARC
-  # }
-
-  # package { 'talend':
-  #  ensure   => installed,
-  #  provider => 'compressed_app',
-  #  source   => $DL_TALEND
-  # }
-
-  # Java Versions
-  # TODO: @devcsrj
-  # I think `jenv` has to be installed first? and you might need
-  # to test these on clean install and then configured later on?
-  # please see: http://www.jenv.be
-
   package { 'jenv':
     ensure   => installed,
     provider => 'homebrew',
   }
 
-  # package { 'java':
-  #   ensure          => installed,
-  #   provider        => 'brewcask',
-  #   install_options => ['--no-binaries']
-  # }
+  package { 'groovy':
+    ensure   => 'latest',
+    provider => 'homebrew',
+    require  => Package['java']
+  }
 
-  # package { 'java7':
-  #   ensure          => installed,
-  #   provider        => 'brewcask',
-  #   install_options => ['--no-binaries']
-  # }
+  package { 'maven':
+    ensure   => 'latest',
+    provider => 'homebrew',
+    require  => Package['java']
+  }
+  
+  package { 'tomcat':
+    ensure   => 'latest',
+    provider => 'homebrew',
+    require  => Package['java']
+  }
 
-  # package { 'java6':
-  #   ensure          => installed,
-  #   provider        => 'brewcask',
-  #   install_options => ['--no-binaries']
-  # }
-
-  # TODO: @devcsrj
-  # Java must be installed first before
-  # the packages below.
-
-  # package { 'groovy':
-  #   ensure   => 'latest',
-  #   provider => 'homebrew',
-  # }
-
-  # package { 'maven':
-  #   ensure   => 'latest',
-  #   provider => 'homebrew',
-
-  # package { 'tomcat':
-  #   ensure   => 'latest',
-  #   provider => 'homebrew',
-  # }
-
-  # TODO: @devcsrj
-  # Only execute if Java environment is present
+  # FIXME: Native-java installer
   # exec { 'install squirrel-sql':
-  #   command => "java -jar ${squirrel}",
-  # TODO: @devcsrj
-  # please add a condition so that it doesn't execute if java is not available
+  #   command => "java -jar ${DL_SQUIRREL}",
   #   onlyif  => []
+  # }
+
+  # FIXME: .tar flavor unsupported
+  # package { 'jd-gui':
+  #   provider => 'compressed_app',
+  #   flavor   => 'tar',
+  #   source   => 'https://github.com/java-decompiler/jd-gui/releases/download/v1.2.0/jd-gui-osx-1.2.0.tar'
+  # }
+
+  # FIXME: Too large ~600MB
+  # package { 'talend':
+  #  ensure   => installed,
+  #  provider => 'compressed_app',
+  #  source   => $DL_TALEND
   # }
 }
