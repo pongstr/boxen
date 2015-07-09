@@ -224,9 +224,19 @@ GITHUBTARBALL
     diffmerge (1.0.0)
 
 GITHUBTARBALL
+  remote: devcsrj/puppet-postgresapp
+  specs:
+    postgresapp (1.0.0)
+
+GITHUBTARBALL
   remote: devcsrj/puppet-soapui
   specs:
     soapui (1.0.0)
+
+GITHUBTARBALL
+  remote: devcsrj/puppet-sqlpowerarchitect
+  specs:
+    sqlpowerarchitect (1.0.0)
 
 GITHUBTARBALL
   remote: femee24/puppet-boot2docker
@@ -301,6 +311,7 @@ DEPENDENCIES
   osx (= 2.8.0)
   phantomjs (= 2.4.0)
   pkgconfig (= 1.0.0)
+  postgresapp (= 1.0.0)
   postgresql (= 4.0.1)
   python (= 2.0.0)
   redis (= 3.1.0)
@@ -310,6 +321,7 @@ DEPENDENCIES
   solr (= 1.0.4)
   sourcetree (= 1.0.0)
   springtoolsuite (= 1.1.0)
+  sqlpowerarchitect (= 1.0.0)
   stdlib (= 4.2.1)
   sublime_text (= 1.1.0)
   sudo (= 1.0.0)
