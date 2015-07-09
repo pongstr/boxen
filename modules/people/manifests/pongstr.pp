@@ -8,6 +8,8 @@ class people::pongstr {
   # clone via git ssh
   # require projects::mjolnir
 
+  include tunnelblick
+
   package { 'vim':
     ensure          => present,
     install_options => ['--override-system-vi']
