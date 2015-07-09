@@ -32,3 +32,8 @@ once done, you may add the line below to your config file:
 Once your shell is ready, open a new tab/window in your Terminal
 and you should be able to successfully run `boxen --env`.
 If that runs cleanly, you're in good shape.
+
+Frequently Asked Questions
+---
+
+You may find common questions and answers [here](docs/faq.md).
