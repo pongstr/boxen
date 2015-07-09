@@ -14,7 +14,6 @@ class groups::vishnu {
 
   include mysql
   include netbeans::jee
-  include postgresql
   include redis
   include solr
   include springtoolsuite
@@ -33,6 +32,12 @@ class groups::vishnu {
     ensure          => installed,
     provider        => 'brewcask',
     install_options => []
+  }
+
+  package { 'postgres':
+    ensure   => installed,
+    provider => 'compressed_app',
+    source   => 'https://github.com/PostgresApp/PostgresApp/releases/download/9.4.4.0/Postgres-9.4.4.0.zip'
   }
 
   package { 'pgadmin3':
