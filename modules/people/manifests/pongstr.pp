@@ -124,7 +124,7 @@ class people::pongstr {
     ensure  => present,
     mode    => '0755',
     group   => 'staff',
-    source   => "${dotfiles}/bin/subl/Package Control.sublime-settings",
+    source  => "${dotfiles}/bin/subl/Package Control.sublime-settings",
     require => Repository[$dotfiles],
   }
 

@@ -6,6 +6,10 @@ class groups::mjolnir {
 
   notify { 'Hello Mjolnir member, we\'re setting up your shit, sit back and relax.': }
 
+  $home       = "/Users/${::boxen_user}"
+  $sublime    = "${home}/Library/Application Support/Sublime Text 3/"
+  $subPkgCtrl = "https://packagecontrol.io/Package%20Control.sublime-package"
+
   include chrome::canary
   include cyberduck
   include nginx
@@ -130,5 +134,12 @@ class groups::mjolnir {
     onlyif => [
       "test ! -d ${home}/.oh-my-zsh"
     ]
+  }
+
+
+  # Fetch Package Control from Repository
+  notify { "Curl ${subPkgCtrl}": }
+  exec { 'SublimeText Package':
+    command => "curl -o ${sublime}Installed Packages/Package Control.sublime-package ${subPkgCtrl}",
   }
 }
