@@ -61,11 +61,11 @@ class groups::vishnu {
     source   => $DL_SOAPUI
   }
 
-  package { 'sqlpower architect':
-    ensure   => installed,
-    provider => 'compressed_app',
-    source   => $DL_SQL_PWRARC
-  }
+  # package { 'sqlpower architect':
+  #   ensure   => installed,
+  #   provider => 'compressed_app',
+  #   source   => $DL_SQL_PWRARC
+  # }
 
   # package { 'talend':
   #  ensure   => installed,
