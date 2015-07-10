@@ -70,17 +70,16 @@ class groups::vishnu {
     require  => Package['java']
   }
 
+  package { 'jd-gui':
+    ensure          => installed,
+    provider        => 'brewcask',
+    install_options => ['--no-binaries','--appdir=/Applications'],
+  }
+
   # FIXME: Native-java installer
   # exec { 'install squirrel-sql':
   #   command => "java -jar ${DL_SQUIRREL}",
   #   onlyif  => []
-  # }
-
-  # FIXME: .tar flavor unsupported
-  # package { 'jd-gui':
-  #   provider => 'compressed_app',
-  #   flavor   => 'tar',
-  #   source   => 'https://github.com/java-decompiler/jd-gui/releases/download/v1.2.0/jd-gui-osx-1.2.0.tar'
   # }
 
   # FIXME: Too large ~600MB
