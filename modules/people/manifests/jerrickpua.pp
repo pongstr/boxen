@@ -1,5 +1,5 @@
 
-class people::devcsrj {
+class people::jerrickpua {
 
   # Back-end Developer Classification
   require groups::vishnu
