@@ -32,7 +32,7 @@ class people::pongstr {
   # Fetch Dotfiles from Repository
   repository { $dotfiles:
     path     => $dotfiles,
-    ensure   => 'origin/boxen',
+    ensure   => 'origin/master',
     source   => 'pongstr/dotfiles',
     provider => 'git',
   }
