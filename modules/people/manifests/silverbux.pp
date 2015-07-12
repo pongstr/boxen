@@ -1,5 +1,5 @@
 
-class people::pongstr {
+class people::silverbux {
 
   # Front-end Developer Classification
   require groups::mjolnir
@@ -9,7 +9,7 @@ class people::pongstr {
   # require projects::mjolnir
 
   include iterm2::stable
-  
+
   package { 'vim':
     ensure          => present,
     install_options => ['--override-system-vi']
@@ -32,7 +32,7 @@ class people::pongstr {
   # Fetch Dotfiles from Repository
   repository { $dotfiles:
     path     => $dotfiles,
-    ensure   => 'origin/boxen',
+    ensure   => 'origin/master',
     source   => 'pongstr/dotfiles',
     provider => 'git',
   }
