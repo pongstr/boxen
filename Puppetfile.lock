@@ -244,24 +244,9 @@ GITHUBTARBALL
     boot2docker (1.0.2)
 
 GITHUBTARBALL
-  remote: pongstr/puppet-cyberduck
-  specs:
-    cyberduck (1.0.2)
-
-GITHUBTARBALL
-  remote: pongstr/puppet-netbeans
-  specs:
-    netbeans (1.0.1)
-
-GITHUBTARBALL
   remote: pongstr/puppet-springtoolsuite
   specs:
     springtoolsuite (1.1.0)
-
-GITHUBTARBALL
-  remote: pongstr/puppet-webstorm
-  specs:
-    webstorm (1.1.3)
 
 GITHUBTARBALL
   remote: puppetlabs/puppetlabs-inifile
@@ -277,6 +262,21 @@ GITHUBTARBALL
   remote: ripienaar/puppet-module-data
   specs:
     module_data (0.0.3)
+
+GITHUBTARBALL
+  remote: toroio/puppet-cyberduck
+  specs:
+    cyberduck (1.0.2)
+
+GITHUBTARBALL
+  remote: toroio/puppet-netbeans
+  specs:
+    netbeans (1.0.1)
+
+GITHUBTARBALL
+  remote: toroio/puppet-webstorm
+  specs:
+    webstorm (1.1.3)
 
 DEPENDENCIES
   atom (= 1.2.0)
