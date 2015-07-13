@@ -11,7 +11,7 @@ an idea how it works and the benefits of having it.
 ```
 $ sudo mkdir -p /opt/boxen
 $ sudo chown ${USER}:staff /opt/boxen
-$ git clone https://github.com/pongstr/boxen.git /opt/boxen/repo && cd /opt/boxen/repo
+$ git clone https://github.com/toroio/boxen.git /opt/boxen/repo && cd /opt/boxen/repo
 
 # Run the Bootstrap
 $ ./script/boxen-bootstrap
