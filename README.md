@@ -8,6 +8,13 @@ an idea how it works and the benefits of having it.
 
 ## Bootstrapping
 
+1. Go to TORO-IO Boxen web: [https://toro-boxen.herokuapp.com](https://toro-boxen.herokuapp.com)
+1. Login using your Github account
+1. Copy + Paste the one liner to your Terminal
+1. Grab a coffee
+
+**Or Manually**
+
 ```
 $ sudo mkdir -p /opt/boxen
 $ sudo chown ${USER}:staff /opt/boxen
