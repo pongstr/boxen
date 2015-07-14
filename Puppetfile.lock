@@ -1,9 +1,4 @@
 GITHUBTARBALL
-  remote: bhiles/puppet-textwrangler
-  specs:
-    textwrangler (1.0.7)
-
-GITHUBTARBALL
   remote: boxen/puppet-atom
   specs:
     atom (1.2.0)
@@ -219,36 +214,6 @@ GITHUBTARBALL
     zsh (1.0.0)
 
 GITHUBTARBALL
-  remote: devcsrj/puppet-diffmerge
-  specs:
-    diffmerge (1.0.0)
-
-GITHUBTARBALL
-  remote: devcsrj/puppet-postgresapp
-  specs:
-    postgresapp (1.0.0)
-
-GITHUBTARBALL
-  remote: devcsrj/puppet-soapui
-  specs:
-    soapui (1.0.0)
-
-GITHUBTARBALL
-  remote: devcsrj/puppet-sqlpowerarchitect
-  specs:
-    sqlpowerarchitect (1.0.0)
-
-GITHUBTARBALL
-  remote: femee24/puppet-boot2docker
-  specs:
-    boot2docker (1.0.2)
-
-GITHUBTARBALL
-  remote: pongstr/puppet-springtoolsuite
-  specs:
-    springtoolsuite (1.1.0)
-
-GITHUBTARBALL
   remote: puppetlabs/puppetlabs-inifile
   specs:
     inifile (1.1.1)
@@ -264,17 +229,52 @@ GITHUBTARBALL
     module_data (0.0.3)
 
 GITHUBTARBALL
-  remote: toroio/puppet-cyberduck
+  remote: toro-io/puppet-boot2docker
+  specs:
+    boot2docker (1.0.2)
+
+GITHUBTARBALL
+  remote: toro-io/puppet-cyberduck
   specs:
     cyberduck (1.0.2)
 
 GITHUBTARBALL
-  remote: toroio/puppet-netbeans
+  remote: toro-io/puppet-diffmerge
+  specs:
+    diffmerge (1.0.0)
+
+GITHUBTARBALL
+  remote: toro-io/puppet-netbeans
   specs:
     netbeans (1.0.1)
 
 GITHUBTARBALL
-  remote: toroio/puppet-webstorm
+  remote: toro-io/puppet-postgresapp
+  specs:
+    postgresapp (1.0.0)
+
+GITHUBTARBALL
+  remote: toro-io/puppet-soapui
+  specs:
+    soapui (1.0.0)
+
+GITHUBTARBALL
+  remote: toro-io/puppet-springtoolsuite
+  specs:
+    springtoolsuite (1.1.0)
+
+GITHUBTARBALL
+  remote: toro-io/puppet-sqlpowerarchitect
+  specs:
+    sqlpowerarchitect (1.0.0)
+
+GITHUBTARBALL
+  remote: toro-io/puppet-textwrangler
+  specs:
+    textwrangler (1.0.7)
+
+GITHUBTARBALL
+  remote: toro-io/puppet-webstorm
   specs:
     webstorm (1.1.3)
 
