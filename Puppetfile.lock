@@ -19,11 +19,6 @@ GITHUBTARBALL
     chrome (1.2.0)
 
 GITHUBTARBALL
-  remote: boxen/puppet-dashlane
-  specs:
-    dashlane (1.0.1)
-
-GITHUBTARBALL
   remote: boxen/puppet-dnsmasq
   specs:
     dnsmasq (2.0.1)
@@ -179,11 +174,6 @@ GITHUBTARBALL
     sysctl (1.0.1)
 
 GITHUBTARBALL
-  remote: boxen/puppet-tunnelblick
-  specs:
-    tunnelblick (1.0.7)
-
-GITHUBTARBALL
   remote: boxen/puppet-vagrant
   specs:
     vagrant (3.3.0)
@@ -214,6 +204,11 @@ GITHUBTARBALL
     zsh (1.0.0)
 
 GITHUBTARBALL
+  remote: pongstr/puppet-tunnelblick
+  specs:
+    tunnelblick (1.0.8)
+
+GITHUBTARBALL
   remote: puppetlabs/puppetlabs-inifile
   specs:
     inifile (1.1.1)
@@ -239,6 +234,11 @@ GITHUBTARBALL
     cyberduck (1.0.2)
 
 GITHUBTARBALL
+  remote: toro-io/puppet-dashlane
+  specs:
+    dashlane (1.0.2)
+
+GITHUBTARBALL
   remote: toro-io/puppet-diffmerge
   specs:
     diffmerge (1.0.0)
@@ -261,7 +261,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: toro-io/puppet-springtoolsuite
   specs:
-    springtoolsuite (1.1.0)
+    springtoolsuite (1.2.0)
 
 GITHUBTARBALL
   remote: toro-io/puppet-sqlpowerarchitect
@@ -285,7 +285,7 @@ DEPENDENCIES
   brewcask (= 0.0.6)
   chrome (= 1.2.0)
   cyberduck (= 1.0.2)
-  dashlane (= 1.0.1)
+  dashlane (= 1.0.2)
   diffmerge (= 1.0.0)
   dnsmasq (= 2.0.1)
   eclipse (= 2.5.0)
@@ -320,14 +320,14 @@ DEPENDENCIES
   soapui (= 1.0.0)
   solr (= 1.0.4)
   sourcetree (= 1.0.0)
-  springtoolsuite (= 1.1.0)
+  springtoolsuite (= 1.2.0)
   sqlpowerarchitect (= 1.0.0)
   stdlib (= 4.2.1)
   sublime_text (= 1.1.0)
   sudo (= 1.0.0)
   sysctl (= 1.0.1)
   textwrangler (= 1.0.7)
-  tunnelblick (= 1.0.7)
+  tunnelblick (= 1.0.8)
   vagrant (= 3.3.0)
   virtualbox (= 1.0.13)
   vlc (= 1.1.0)
