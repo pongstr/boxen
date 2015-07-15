@@ -52,7 +52,7 @@ like so:
 $ curl -L -o setup https://raw.githubusercontent.com/pongstr/dotfiles/master/init/.gituser
 
 # Make it executable and run it, follow instructions and you're golden
-$ chmod +x setup && ./.gituser
+$ chmod +x setup && ./setup
 ```
 
 Frequently Asked Questions
