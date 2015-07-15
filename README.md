@@ -40,7 +40,7 @@ Once your shell is ready, open a new tab/window in your Terminal
 and you should be able to successfully run `boxen --env`.
 If that runs cleanly, you're in good shape.
 
-Generation SSH-Keys for Github & Bitbucket
+Generating SSH-Keys for Github & Bitbucket
 ---
 
 As of now, this process is not included yet ([why](https://github.com/TORO-IO/boxen/issues/73)).
