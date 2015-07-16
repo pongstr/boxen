@@ -74,6 +74,7 @@ node default {
   # Should be set by group
   ruby::version { '2.1.0': }
   ruby::version { '2.1.2': }
+  ruby::version { '2.1.3': }
   ruby::version { '2.1.6': }
 
   # Taps for Homebrew
