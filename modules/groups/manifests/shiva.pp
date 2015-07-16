@@ -1,9 +1,18 @@
 # Shiva: Installation Setup for Junior Backend Developers
 
 class groups::shiva {
+  
   notify { 'Hello Shiva member, Let\'s set you up.': }
 
   include cyberduck
+
+  package { 'eclipse-jee':
+    ensure          => installed,
+    provider        => 'brewcask',
+    install_options => [
+      '--appdir=/Applications'
+    ],
+  }
 
   package { 'Keynote':
     ensure   => installed,
@@ -15,14 +24,6 @@ class groups::shiva {
     ensure   => installed,
     provider => 'appdmg',
     source   => 'http://192.168.21.151/winzipmacedition40.dmg'
-  }
-
-  package { 'filezilla':
-    ensure          => installed,
-    provider        => 'brewcask',
-    install_options => [
-      '--appdir=/Applications'
-    ],
   }
 
   package { 'openoffice':
