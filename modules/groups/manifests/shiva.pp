@@ -4,6 +4,7 @@ class groups::shiva {
   
   notify { 'Hello Shiva member, Let\'s set you up.': }
 
+  include java
   include springtoolsuite
   include virtualbox
 
