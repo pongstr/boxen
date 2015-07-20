@@ -6,7 +6,7 @@ class people::pongstr {
 
   # Projects Cloning will fail since projects
   # clone via git ssh
-  # require projects::mjolnir
+  require projects::coder
 
   include tunnelblick
 
