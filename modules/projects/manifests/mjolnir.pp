@@ -1,14 +1,14 @@
 class projects::mjolnir {
 
-  exec { 'Create Projects Directory':
-    ensure => directory,
-    onlyif => ["test ! -d ${home}/Projects"]
-  }
-
-  file { "${home}/Projects":
-    ensure  => directory,
-    require => Exec['Create Projects Directory'],
-  }
+  # exec { 'Create Projects Directory':
+  #   ensure => directory,
+  #   onlyif => ["test ! -d ${home}/Projects"]
+  # }
+  #
+  # file { "${home}/Projects":
+  #   ensure  => directory,
+  #   require => Exec['Create Projects Directory'],
+  # }
 
   boxen::project { "${home}/Projects/coderio" :
     mongodb  => true,

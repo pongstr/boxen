@@ -12,6 +12,7 @@ class groups::mjolnir {
 
   include chrome::canary
   include cyberduck
+  include dnsmasq
   include nginx
   include python
   include sublime_text
