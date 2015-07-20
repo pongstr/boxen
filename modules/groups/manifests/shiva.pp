@@ -4,7 +4,9 @@ class groups::shiva {
   
   notify { 'Hello Shiva member, Let\'s set you up.': }
 
-  include cyberduck
+  include java
+  include springtoolsuite
+  include virtualbox
 
   package { 'eclipse-jee':
     ensure          => installed,
@@ -14,58 +16,18 @@ class groups::shiva {
     ],
   }
 
-  package { 'Keynote':
+  package { 'jenv':
     ensure   => installed,
-    provider => 'compressed_app',
-    source   => 'http://192.168.21.151/Keynote.zip'
+    provider => 'homebrew',
   }
 
-  package { 'winzip':
-    ensure   => installed,
-    provider => 'appdmg',
-    source   => 'http://192.168.21.151/winzipmacedition40.dmg'
+  package { 'groovy':
+    ensure   => 'latest',
+    provider => 'homebrew',
   }
 
-  package { 'openoffice':
-    ensure          => installed,
-    provider        => 'brewcask',
-    install_options => [
-      '--appdir=/Applications'
-    ],
+  package { 'maven':
+    ensure   => 'latest',
+    provider => 'homebrew',
   }
-
-  package { 'adobe-reader':
-    ensure          => installed,
-    provider        => 'brewcask',
-    install_options => [
-      '--appdir=/Applications'
-    ],
-  }
-
-  package { 'yemuzip':
-    ensure          => installed,
-    provider        => 'brewcask',
-    install_options => [
-      '--no-binaries',
-      '--appdir=/Applications'
-    ],
-  }
-
-  package { 'unrarx':
-    ensure          => installed,
-    provider        => 'brewcask',
-    install_options => [
-      '--no-binaries',
-      '--appdir=/Applications'
-    ],
-  }
-
-  package { 'adobe-creative-cloud':
-    ensure          => installed,
-    provider        => 'brewcask',
-    install_options => [
-      '--appdir=/Applications'
-    ]
-  }
-
 }
