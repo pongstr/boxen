@@ -2,7 +2,7 @@
 class people::pongstr {
 
   # Front-end Developer Classification
-  require groups::mjolnir
+  # require groups::mjolnir
 
   # Projects Cloning will fail since projects
   # clone via git ssh
