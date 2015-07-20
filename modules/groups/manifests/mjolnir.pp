@@ -3,8 +3,6 @@
 class groups::mjolnir {
   require nodejs
   require ruby
-  require projects::coder
-  require projects::explorer
 
   notify { 'Hello Mjolnir member, we\'re setting up your shit, sit back and relax.': }
 

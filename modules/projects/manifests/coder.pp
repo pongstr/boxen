@@ -1,5 +1,13 @@
 class projects::coder {
-  boxen::project { 'coder' :
+
+  $projects = "/Users/${::boxen_user}/Projects"
+  $coder    = "${projects}/coder"
+
+  file { $projects: ensure => directory }
+  file { $coder:    ensure => directory }
+
+  boxen::project { 'coder':
+    dir      => "${coder}",
     mongodb  => true,
     nginx    => "/opt/boxen/repo/modules/projects/templates/shared/coder.conf.erb",
     nodejs   => 'v0.12.5',
