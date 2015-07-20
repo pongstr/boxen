@@ -14,7 +14,7 @@ class groups::vishnu {
   include postgresapp
   include redis
   include solr
-  include soapui
+  # include soapui
   include springtoolsuite
   include sublime_text
   include textwrangler
