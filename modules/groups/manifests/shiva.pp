@@ -24,12 +24,10 @@ class groups::shiva {
   package { 'groovy':
     ensure   => 'latest',
     provider => 'homebrew',
-    require  => Package['java']
   }
 
   package { 'maven':
     ensure   => 'latest',
     provider => 'homebrew',
-    require  => Package['java']
   }
 }
