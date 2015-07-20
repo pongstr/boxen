@@ -1,6 +1,10 @@
 Our boxen
 ===
 
+Okay, before even reading further below, Make sure you have XCode installed and
+had verified installation via gui first! and then install XCode Commandline tools
+via gui!! once done, read further below to proceed with Boxen.
+
 If you already have an idea what Boxen is what this repo does,
 please proceed to [Bootstrapping](#bootstrapping) otherwise you may
 head to [boxen/our-boxen](https://github.com/boxen/our-boxen) to get

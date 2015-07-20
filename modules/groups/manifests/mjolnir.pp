@@ -156,7 +156,6 @@ class groups::mjolnir {
     ]
   }
 
-
   # Fetch Package Control from Repository
   exec { 'SublimeText Package':
     command => "curl -o ${sublime}Installed Packages/Package Control.sublime-package ${subPkgCtrl}",
