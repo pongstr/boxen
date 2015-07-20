@@ -7,6 +7,7 @@ class groups::shiva {
   include java
   include springtoolsuite
   include virtualbox
+  include sublime_text
 
   package { 'eclipse-jee':
     ensure          => installed,
