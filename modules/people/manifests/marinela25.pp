@@ -1,5 +1,5 @@
 class people::marinela25 {
-  require groups::shiva
+  require groups::ganesha
 
   notify { 'Hello ${::boxen_user}': }
 }
