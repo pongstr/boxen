@@ -33,7 +33,7 @@ class people::silverbux {
   repository { $dotfiles:
     path     => $dotfiles,
     ensure   => 'origin/master',
-    source   => 'pongstr/dotfiles',
+    source   => 'silverbux/dotfiles',
     provider => 'git',
   }
 
@@ -41,7 +41,7 @@ class people::silverbux {
   repository { $sublime:
     path     => "${sublime}/Theme - Spacegray",
     ensure   => 'origin/master',
-    source   => 'pongstr/spacegray',
+    source   => 'silverbux/spacegray',
     provider => 'git',
   }
 
