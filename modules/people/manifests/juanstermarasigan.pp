@@ -167,4 +167,12 @@ class people::juanstermarasigan {
   # include projects::mjolnir::apiexplorer
   # include projects::mjolnir::coderio
   # include projects::mjolnir::uikit
+
+  package { 'adobe-creative-cloud':
+    ensure => installed,
+    provider => 'brewcask',
+    install_options => [
+      '--appdir=/Applications'
+    ]
+  }
 }
