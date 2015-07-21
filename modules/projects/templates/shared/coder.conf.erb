@@ -6,12 +6,14 @@ upstream coder {
   server localhost:3004;
 }
 
+proxy_cache_path /opt/boxen/data/nginx/cache levels=1:2 keys_zone=my-cache:8m max_size=1000m inactive=600m;
+proxy_temp_path /opt/boxen/data/nginx/temp;
+
 server {
   # Make site accessible from http://localhost/
   listen 80;
   server_name coder.dev;
   client_max_body_size 50M;
-
   try_files $uri @coder.dev;
 
   location @coder.dev {
@@ -21,6 +23,10 @@ server {
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_set_header Host $host;
     proxy_pass http://coder;
+
+    proxy_cache my-cache;
+    proxy_cache_valid  200 302  60m;
+    proxy_cache_valid  404      1m;
   }
 }
 
@@ -32,18 +38,27 @@ server {
     proxy_pass http://coder/dashboard$request_uri;
     proxy_set_header Host coder.dev;
     proxy_cookie_domain app.coder.dev coder.dev;
+    proxy_cache my-cache;
+    proxy_cache_valid  200 302  60m;
+    proxy_cache_valid  404      1m;
   }
 
   location /app {
     proxy_pass http://coder$request_uri;
     proxy_set_header Host coder.dev;
     proxy_cookie_domain api.coder.dev coder.dev;
+    proxy_cache my-cache;
+    proxy_cache_valid  200 302  60m;
+    proxy_cache_valid  404      1m;
   }
 
   location /vendor {
     proxy_pass http://coder$request_uri;
     proxy_set_header Host coder.dev;
     proxy_cookie_domain api.coder.dev coder.dev;
+    proxy_cache my-cache;
+    proxy_cache_valid  200 302  60m;
+    proxy_cache_valid  404      1m;
   }
 }
 
@@ -55,18 +70,9 @@ server {
     proxy_pass http://coder/developer$request_uri;
     proxy_set_header Host coder.dev;
     proxy_cookie_domain api.coder.dev coder.dev;
-  }
-
-  location /app {
-    proxy_pass http://coder/app$request_uri;
-    proxy_set_header Host coder.dev;
-    proxy_cookie_domain api.coder.dev coder.dev;
-  }
-
-  location /vendor {
-    proxy_pass http://coder/vendor$request_uri;
-    proxy_set_header Host coder.dev;
-    proxy_cookie_domain api.coder.dev coder.dev;
+    proxy_cache my-cache;
+    proxy_cache_valid  200 302  60m;
+    proxy_cache_valid  404      1m;
   }
 }
 
@@ -77,6 +83,9 @@ server {
     proxy_pass http://coder/api$request_uri;
     proxy_set_header Host coder.dev;
     proxy_cookie_domain api.coder.dev coder.dev;
+    proxy_cache my-cache;
+    proxy_cache_valid  200 302  60m;
+    proxy_cache_valid  404      1m;
   }
 }
 
@@ -87,5 +96,8 @@ server {
     proxy_pass http://coder/explorer$request_uri;
     proxy_set_header Host coder.dev;
     proxy_cookie_domain explorer.coder.dev coder.dev;
+    proxy_cache my-cache;
+    proxy_cache_valid  200 302  60m;
+    proxy_cache_valid  404      1m;
   }
 }
