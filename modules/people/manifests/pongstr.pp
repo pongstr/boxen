@@ -2,6 +2,8 @@
 class people::pongstr {
 
   # Front-end Developer Classification
+  require groups::mjolnir
+
   include tunnelblick
 
   package { 'vim':
