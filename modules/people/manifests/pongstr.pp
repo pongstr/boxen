@@ -2,12 +2,6 @@
 class people::pongstr {
 
   # Front-end Developer Classification
-  # require groups::mjolnir
-
-  # Projects Cloning will fail since projects
-  # clone via git ssh
-  require projects::coder
-
   include tunnelblick
 
   package { 'vim':
