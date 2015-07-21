@@ -9,9 +9,9 @@ upstream coder {
 server {
   # Make site accessible from http://localhost/
   listen 80;
-  server_name @<%= @server_name %> *.@<%= @server_name %>;
+  server_name <%= @server_name %> *.<%= @server_name %>;
   client_max_body_size 50M;
-  
+
   try_files $uri @<%= @server_name %>;
 
   location @<%= @server_name %> {
