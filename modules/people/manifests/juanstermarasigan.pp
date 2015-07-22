@@ -9,6 +9,11 @@ class people::juanstermarasigan {
   # require projects::mjolnir
 
   include tunnelblick
+  
+  package { 'java6':
+    ensure          => installed,
+    provider        => 'brewcask',
+  }
 
   package { 'vim':
     ensure          => present,
