@@ -1,6 +1,6 @@
 class projects::uikit {
 
-  $projects = "/Users/${::boxen_user}/Projects"
+  $projects = "/Users/${::boxen_user}/BoxenProjects"
   $uikit    = "${projects}/uikit"
 
   file { $projects: ensure => directory }

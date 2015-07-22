@@ -1,6 +1,6 @@
 class projects::explorer {
 
-  $projects = "/Users/${::boxen_user}/Projects"
+  $projects = "/Users/${::boxen_user}/BoxenProjects"
   $explorer = "${projects}/explorer"
 
   file { $projects: ensure => directory }
