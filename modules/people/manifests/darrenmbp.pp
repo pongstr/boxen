@@ -10,15 +10,15 @@ class people::darrenmbp {
   notify { "We're now going to run the setup to make you feel at home.": }
 
 
-package { 'intellij-idea':
-  ensure          => installed,
-  provider        => 'brewcask',
-  install_options => ['--no-binaries','--appdir=/Applications'],
-}
+  package { 'intellij-idea':
+    ensure          => installed,
+    provider        => 'brewcask',
+    install_options => ['--no-binaries','--appdir=/Applications'],
+  }
 
-package { 'java6':
-  ensure          => installed,
-  provider        => 'brewcask',
-}
+  package { 'java6':
+    ensure          => installed,
+    provider        => 'brewcask',
+  }
 
 }
