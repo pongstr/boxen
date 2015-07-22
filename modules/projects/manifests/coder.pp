@@ -1,6 +1,6 @@
 class projects::coder {
 
-  $projects = "/Users/${::boxen_user}/Projects"
+  $projects = "/Users/${::boxen_user}/BoxenProjects"
   $coder    = "${projects}/coder"
 
   file { $projects: ensure => directory }
