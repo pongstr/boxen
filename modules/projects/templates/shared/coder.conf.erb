@@ -25,8 +25,11 @@ server {
     proxy_pass http://coder;
 
     proxy_cache my-cache;
-    proxy_cache_valid  200 302  60m;
+    proxy_cache_valid  200 302  5s;
     proxy_cache_valid  404      1m;
+    expires max;
+
+    # proxy_cache_bypass  $http_cache_control;
   }
 }
 
@@ -38,27 +41,39 @@ server {
     proxy_pass http://coder/dashboard$request_uri;
     proxy_set_header Host coder.dev;
     proxy_cookie_domain app.coder.dev coder.dev;
+
     proxy_cache my-cache;
-    proxy_cache_valid  200 302  60m;
+    proxy_cache_valid  200 302  5s;
     proxy_cache_valid  404      1m;
+    expires max;
+
+    # proxy_cache_bypass  $http_cache_control;
   }
 
   location /app {
     proxy_pass http://coder$request_uri;
     proxy_set_header Host coder.dev;
     proxy_cookie_domain api.coder.dev coder.dev;
+
     proxy_cache my-cache;
-    proxy_cache_valid  200 302  60m;
+    proxy_cache_valid  200 302  5s;
     proxy_cache_valid  404      1m;
+    expires max;
+
+    # proxy_cache_bypass  $http_cache_control;
   }
 
   location /vendor {
     proxy_pass http://coder$request_uri;
     proxy_set_header Host coder.dev;
     proxy_cookie_domain api.coder.dev coder.dev;
+
     proxy_cache my-cache;
-    proxy_cache_valid  200 302  60m;
+    proxy_cache_valid  200 302  5s;
     proxy_cache_valid  404      1m;
+    expires max;
+
+    # proxy_cache_bypass  $http_cache_control;
   }
 }
 
@@ -70,9 +85,13 @@ server {
     proxy_pass http://coder/developer$request_uri;
     proxy_set_header Host coder.dev;
     proxy_cookie_domain api.coder.dev coder.dev;
+
     proxy_cache my-cache;
-    proxy_cache_valid  200 302  60m;
+    proxy_cache_valid  200 302  5s;
     proxy_cache_valid  404      1m;
+    expires max;
+
+    # proxy_cache_bypass  $http_cache_control;
   }
 }
 
@@ -83,9 +102,13 @@ server {
     proxy_pass http://coder/api$request_uri;
     proxy_set_header Host coder.dev;
     proxy_cookie_domain api.coder.dev coder.dev;
+
     proxy_cache my-cache;
-    proxy_cache_valid  200 302  60m;
+    proxy_cache_valid  200 302  5s;
     proxy_cache_valid  404      1m;
+    expires max;
+
+    # proxy_cache_bypass  $http_cache_control;
   }
 }
 
@@ -96,8 +119,12 @@ server {
     proxy_pass http://coder/explorer$request_uri;
     proxy_set_header Host coder.dev;
     proxy_cookie_domain explorer.coder.dev coder.dev;
+
     proxy_cache my-cache;
-    proxy_cache_valid  200 302  60m;
+    proxy_cache_valid  200 302  5s;
     proxy_cache_valid  404      1m;
+    expires max;
+
+    # proxy_cache_bypass  $http_cache_control;
   }
 }
