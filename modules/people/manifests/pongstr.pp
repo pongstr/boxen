@@ -41,7 +41,6 @@ class people::pongstr {
     provider => 'git',
   }
 
-
   # Create Vim Directory for all vim related stuff
   $vim = [
     "${home}/.vim",
@@ -153,14 +152,4 @@ class people::pongstr {
   include osx::finder::show_hard_drives_on_desktop
   include osx::global::tap_to_click
 
-  # TODO: Uncomment for first run
-  # For the guys saving battery life, make sure
-  # services are only running when its needed.
-  # service { 'dev.mongodb': ensure => 'stopped', }
-  # service { 'dev.nginx': ensure => 'stopped', }
-
-  # Initialize Projects
-  # include projects::mjolnir::apiexplorer
-  # include projects::mjolnir::coderio
-  # include projects::mjolnir::uikit
 }
