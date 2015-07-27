@@ -56,6 +56,17 @@ class groups::osiris {
     source   => 'http://192.168.21.151/Keynote.zip'
   }
 
+  package { 'java':
+     ensure     => installed,
+     provider   => 'brewcask',
+   }
+
+  package { 'sqldeveloper':
+    ensure   => installed,
+    provider => 'compressed_app',
+    source   => 'http://192.168.21.151/sqldeveloper-4.1.1.19.59-macosx.app.zip'
+  }
+
   # Team Osiris must consolidate Databases
   # and set them in `modules/projects/manifests/osiris.pp`
   # so they can only be checked out to the assigned
