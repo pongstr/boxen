@@ -52,12 +52,13 @@ class groups::ganesha {
     ],
   }
 
-  package { 'adobe-creative-cloud':
+  package { 'filezilla':
     ensure          => installed,
     provider        => 'brewcask',
     install_options => [
+      '--no-binaries',
       '--appdir=/Applications'
-    ]
+    ],
   }
 
 }
