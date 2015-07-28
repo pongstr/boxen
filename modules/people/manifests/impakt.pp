@@ -3,6 +3,7 @@ class people::impakt {
 
   # Applications for Daren Klamer Only
 
+  include tunnelblick
   include sublime_text
   include textwrangler
   include virtualbox
