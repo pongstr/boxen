@@ -117,13 +117,13 @@ class people::pongstr {
     require => Repository[$dotfiles],
   }
 
-  file { "${sublime}/User/Package Control.sublime-settings":
-    ensure  => present,
-    mode    => '0755',
-    group   => 'staff',
-    source  => "${dotfiles}/bin/subl/Package Control.sublime-settings",
-    require => Repository[$dotfiles],
-  }
+  # file { "${sublime}/User/Package Control.sublime-settings":
+  #   ensure  => present,
+  #   mode    => '0755',
+  #   group   => 'staff',
+  #   source  => "${dotfiles}/bin/subl/Package Control.sublime-settings",
+  #   require => Repository[$dotfiles],
+  # }
 
   # OSX Preferences
   # ---------------
