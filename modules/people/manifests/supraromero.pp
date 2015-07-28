@@ -12,5 +12,10 @@ class people::supraromero {
     provider => 'pkgdmg',
     source   => 'http://192.168.21.151/DisplayLink_OSX_2.4.dmg'
   }
-  
+
+  package { 'remote-desktop-manager':
+    ensure          => installed,
+    provider        => 'brewcask',
+    install_options => ['--no-binaries','--appdir=/Applications'],
+  }
 }
