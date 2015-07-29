@@ -28,6 +28,14 @@ class people::impakt {
     install_options => ['--no-binaries','--appdir=/Applications'],
   }
 
+  package { 'openoffice':
+    ensure          => installed,
+    provider        => 'brewcask',
+    install_options => [
+      '--appdir=/Applications'
+    ],
+  }
+
   package { 'skype':
     ensure          => installed,
     provider        => 'brewcask',
