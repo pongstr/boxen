@@ -21,24 +21,19 @@ class groups::osiris {
   include virtualbox
   include zsh
 
-  package { 'vim':
-    ensure          => present,
-    install_options => [],
-  }
-
-  package { 'mysqlworkbench':
-    ensure          => installed,
-    provider        => 'brewcask',
-    install_options => ['--no-binaries','--appdir=/Applications'],
-  }
-
   package { 'atom':
     ensure          => installed,
     provider        => 'brewcask',
     install_options => ['--no-binaries','--appdir=/Applications'],
   }
 
-  package { 'github':
+  package { 'autodmg':
+    ensure          => installed,
+    provider        => 'brewcask',
+    install_options => ['--no-binaries','--appdir=/Applications'],
+  }
+
+  package { 'cord':
     ensure          => installed,
     provider        => 'brewcask',
     install_options => ['--no-binaries','--appdir=/Applications'],
@@ -50,16 +45,40 @@ class groups::osiris {
     install_options => ['--no-binaries','--appdir=/Applications'],
   }
 
+  package { 'filezilla':
+    ensure          => installed,
+    provider        => 'brewcask',
+    install_options => ['--no-binaries','--appdir=/Applications'],
+  }
+
+  package { 'github':
+    ensure          => installed,
+    provider        => 'brewcask',
+    install_options => ['--no-binaries','--appdir=/Applications'],
+  }
+
+  package { 'java':
+     ensure     => installed,
+     provider   => 'brewcask',
+  }
+
   package { 'Keynote':
     ensure   => installed,
     provider => 'compressed_app',
     source   => 'http://192.168.21.151/Keynote.zip'
   }
 
-  package { 'java':
-     ensure     => installed,
-     provider   => 'brewcask',
-   }
+  package { 'mysqlworkbench':
+    ensure          => installed,
+    provider        => 'brewcask',
+    install_options => ['--no-binaries','--appdir=/Applications'],
+  }
+
+  package { 'sequel-pro':
+    ensure          => installed,
+    provider        => 'brewcask',
+    install_options => ['--no-binaries','--appdir=/Applications'],
+  }
 
   package { 'sqldeveloper':
     ensure   => installed,
@@ -67,11 +86,21 @@ class groups::osiris {
     source   => 'http://192.168.21.151/sqldeveloper-4.1.1.19.59-macosx.app.zip'
   }
 
-  # Team Osiris must consolidate Databases
-  # and set them in `modules/projects/manifests/osiris.pp`
-  # so they can only be checked out to the assigned
-  # members of the group.
-  # mysql::db { 'database': }
+  package { 'teamviewer':
+    ensure          => installed,
+    provider        => 'brewcask',
+    install_options => ['--no-binaries','--appdir=/Applications'],
+  }
+
+  package { 'vim':
+    ensure          => present,
+  }
+
+  package { 'vmware-fusion':
+    ensure          => installed,
+    provider        => 'brewcask',
+    install_options => ['--no-binaries','--appdir=/Applications'],
+  }
 
   # Vagrant Box Setup:
   vagrant::box { 'squeeze64/vmware_fusion':
