@@ -74,6 +74,12 @@ class groups::osiris {
     install_options => ['--no-binaries','--appdir=/Applications'],
   }
 
+  package { 'openoffice':
+    ensure          => installed,
+    provider        => 'brewcask',
+    install_options => ['--no-binaries','--appdir=/Applications'],
+  }
+
   package { 'sequel-pro':
     ensure          => installed,
     provider        => 'brewcask',
@@ -97,6 +103,12 @@ class groups::osiris {
   }
 
   package { 'vmware-fusion':
+    ensure          => installed,
+    provider        => 'brewcask',
+    install_options => ['--no-binaries','--appdir=/Applications'],
+  }
+
+  package { 'wireshark':
     ensure          => installed,
     provider        => 'brewcask',
     install_options => ['--no-binaries','--appdir=/Applications'],
