@@ -1,16 +1,9 @@
- # Osiris: Installation Setup for System Administrators
+# Osiris: Installation Setup for System Administrators
 
 class groups::osiris {
+
   notify { 'Hello Osiris Member, we\'re setting up your workstations': }
 
-  $home = "/Users/${::boxen_user}"
-
-  # include chrome              # Already included in Site Manifest (manifests/site.pp)
-  # include dashlane            # Already included in Site Manifest (manifests/site.pp)
-  # include firefox             # Already included in Site Manifest (manifests/site.pp)
-  # include github_for_mac      # Deprecated as per github.com/boxen/puppet-github_for_mac
-  # include hipchat             # Already included in Site Manifest (manifests/site.pp)
-  # include vlc                 # Already included in Site Manifest (manifests/site.pp)
   include boot2docker
   include iterm2::stable
   include mysql
@@ -24,42 +17,60 @@ class groups::osiris {
   package { 'atom':
     ensure          => installed,
     provider        => 'brewcask',
-    install_options => ['--no-binaries','--appdir=/Applications'],
+    install_options => [
+      '--no-binaries',
+      '--appdir=/Applications'
+    ]
   }
 
   package { 'autodmg':
     ensure          => installed,
     provider        => 'brewcask',
-    install_options => ['--no-binaries','--appdir=/Applications'],
+    install_options => [
+      '--no-binaries',
+      '--appdir=/Applications'
+    ]
   }
 
   package { 'cord':
     ensure          => installed,
     provider        => 'brewcask',
-    install_options => ['--no-binaries','--appdir=/Applications'],
+    install_options => [
+      '--no-binaries',
+      '--appdir=/Applications'
+    ]
   }
 
   package { 'evernote':
     ensure          => installed,
     provider        => 'brewcask',
-    install_options => ['--no-binaries','--appdir=/Applications'],
+    install_options => [
+      '--no-binaries',
+      '--appdir=/Applications'
+    ]
   }
 
   package { 'filezilla':
     ensure          => installed,
     provider        => 'brewcask',
-    install_options => ['--no-binaries','--appdir=/Applications'],
+    install_options => [
+      '--no-binaries',
+      '--appdir=/Applications'
+    ]
   }
 
   package { 'github':
     ensure          => installed,
     provider        => 'brewcask',
-    install_options => ['--no-binaries','--appdir=/Applications'],
+    install_options => [
+      '--no-binaries',
+      '--appdir=/Applications'
+    ]
   }
 
   package { 'java':
-     ensure     => installed,
-     provider   => 'brewcask',
+    ensure     => installed,
+    provider   => 'brewcask',
   }
 
   package { 'Keynote':
@@ -71,20 +82,29 @@ class groups::osiris {
   package { 'mysqlworkbench':
     ensure          => installed,
     provider        => 'brewcask',
-    install_options => ['--no-binaries','--appdir=/Applications'],
+    install_options => [
+      '--no-binaries',
+      '--appdir=/Applications'
+    ]
   }
 
   package { 'openoffice':
     ensure          => installed,
     provider        => 'brewcask',
-    install_options => ['--no-binaries','--appdir=/Applications'],
+    install_options => [
+      '--no-binaries',
+      '--appdir=/Applications'
+    ]
   }
 
   package { 'sequel-pro':
     ensure          => installed,
     provider        => 'brewcask',
-    install_options => ['--no-binaries','--appdir=/Applications'],
-  }
+    install_options => [
+      '--no-binaries',
+      '--appdir=/Applications'
+    ]
+    }
 
   package { 'sqldeveloper':
     ensure   => installed,
@@ -95,23 +115,32 @@ class groups::osiris {
   package { 'teamviewer':
     ensure          => installed,
     provider        => 'brewcask',
-    install_options => ['--no-binaries','--appdir=/Applications'],
+    install_options => [
+      '--no-binaries',
+      '--appdir=/Applications'
+    ]
   }
 
   package { 'vim':
-    ensure          => present,
+    ensure => present,
   }
 
   package { 'vmware-fusion':
     ensure          => installed,
     provider        => 'brewcask',
-    install_options => ['--no-binaries','--appdir=/Applications'],
+    install_options => [
+      '--no-binaries',
+      '--appdir=/Applications'
+    ]
   }
 
   package { 'wireshark':
     ensure          => installed,
     provider        => 'brewcask',
-    install_options => ['--no-binaries','--appdir=/Applications'],
+    install_options => [
+      '--no-binaries',
+      '--appdir=/Applications'
+    ]
   }
 
   # Vagrant Box Setup:
