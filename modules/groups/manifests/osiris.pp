@@ -41,6 +41,15 @@ class groups::osiris {
     ]
   }
 
+  package { 'docker-compose':
+    ensure          => installed,
+    provider        => 'brewcask',
+    install_options => [
+      '--no-binaries',
+      '--appdir=/Applications'
+    ]
+  }
+
   package { 'evernote':
     ensure          => installed,
     provider        => 'brewcask',
