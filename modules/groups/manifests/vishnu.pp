@@ -58,8 +58,8 @@ class groups::vishnu {
     require  => Package['java']
   }
 
-  package { 'maven':
-    ensure   => 'latest',
+  package { 'maven32':
+    ensure   => 'present',
     provider => 'homebrew',
     require  => Package['java']
   }
