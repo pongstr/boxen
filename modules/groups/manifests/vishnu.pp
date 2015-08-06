@@ -56,6 +56,12 @@ class groups::vishnu {
     ensure   => 'latest',
     provider => 'homebrew',
     require  => Package['java']
+  }  
+
+  package { 'ant':
+    ensure   => 'latest',
+    provider => 'homebrew',
+    require  => Package['java']
   }
 
   package { 'maven32':
