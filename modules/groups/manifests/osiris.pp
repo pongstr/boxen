@@ -14,6 +14,11 @@ class groups::osiris {
   include virtualbox
   include zsh
 
+  package { 'asciinema':
+    ensure   => installed,
+    provider => 'homebrew',
+  }
+
   package { 'atom':
     ensure          => installed,
     provider        => 'brewcask',
