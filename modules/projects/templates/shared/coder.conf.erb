@@ -15,8 +15,8 @@ server {
   listen 443 ssl;
   server_name coder.dev;
 
-  ssl_certificate /etc/nginx/ssl/nginx.crt;
-  ssl_certificate_key /etc/nginx/ssl/nginx.key;
+  # ssl_certificate /etc/nginx/ssl/nginx.crt;
+  # ssl_certificate_key /etc/nginx/ssl/nginx.key;
 
   client_max_body_size 50M;
   try_files $uri @coder.dev;
@@ -31,10 +31,10 @@ server {
 
     # proxy_cache_valid  200 302  59m;
     # proxy_cache_valid  404      59m;
-    proxy_cache my-cache;
-    expires max;
+    # proxy_cache my-cache;
+    # expires max;
 
-    # proxy_cache_bypass  $http_cache_control;
+    proxy_cache_bypass  $http_cache_control;
   }
 }
 
@@ -43,8 +43,8 @@ server {
   listen 443 ssl;
   server_name app.coder.dev;
 
-  ssl_certificate /etc/nginx/ssl/nginx.crt;
-  ssl_certificate_key /etc/nginx/ssl/nginx.key;
+  # ssl_certificate /etc/nginx/ssl/nginx.crt;
+  # ssl_certificate_key /etc/nginx/ssl/nginx.key;
 
   location / {
     proxy_pass http://coder/dashboard$request_uri;
@@ -53,10 +53,10 @@ server {
 
     # proxy_cache_valid  200 302  59m;
     # proxy_cache_valid  404      59m;
-    proxy_cache my-cache;
-    expires max;
+    # proxy_cache my-cache;
+    # expires max;
 
-    # proxy_cache_bypass  $http_cache_control;
+    proxy_cache_bypass  $http_cache_control;
   }
 
   location /app {
@@ -66,10 +66,10 @@ server {
 
     # proxy_cache_valid  200 302  59m;
     # proxy_cache_valid  404      59m;
-    proxy_cache my-cache;
-    expires max;
+    # proxy_cache my-cache;
+    # expires max;
 
-    # proxy_cache_bypass  $http_cache_control;
+    proxy_cache_bypass  $http_cache_control;
   }
 
   location /vendor {
@@ -79,10 +79,10 @@ server {
 
     # proxy_cache_valid  200 302  59m;
     # proxy_cache_valid  404      59m;
-    proxy_cache my-cache;
-    expires max;
+    # proxy_cache my-cache;
+    # expires max;
 
-    # proxy_cache_bypass  $http_cache_control;
+    proxy_cache_bypass  $http_cache_control;
   }
 }
 
@@ -91,8 +91,8 @@ server {
   listen 443 ssl;
   server_name developer.coder.dev;
 
-  ssl_certificate /etc/nginx/ssl/nginx.crt;
-  ssl_certificate_key /etc/nginx/ssl/nginx.key;
+  # ssl_certificate /etc/nginx/ssl/nginx.crt;
+  # ssl_certificate_key /etc/nginx/ssl/nginx.key;
 
   location / {
     proxy_pass http://coder/developer$request_uri;
@@ -101,10 +101,10 @@ server {
 
     # proxy_cache_valid  200 302  59m;
     # proxy_cache_valid  404      59m;
-    proxy_cache my-cache;
-    expires max;
+    # proxy_cache my-cache;
+    # expires max;
 
-    # proxy_cache_bypass  $http_cache_control;
+    proxy_cache_bypass  $http_cache_control;
   }
 }
 
@@ -113,8 +113,8 @@ server {
   listen 443 ssl;
   server_name api.coder.dev;
 
-  ssl_certificate /etc/nginx/ssl/nginx.crt;
-  ssl_certificate_key /etc/nginx/ssl/nginx.key;
+  # ssl_certificate /etc/nginx/ssl/nginx.crt;
+  # ssl_certificate_key /etc/nginx/ssl/nginx.key;
 
   location / {
     proxy_pass http://coder/api$request_uri;
@@ -123,10 +123,10 @@ server {
 
     # proxy_cache_valid  200 302  59m;
     # proxy_cache_valid  404      59m;
-    proxy_cache my-cache;
-    expires max;
+    # proxy_cache my-cache;
+    # expires max;
 
-    # proxy_cache_bypass  $http_cache_control;
+    proxy_cache_bypass  $http_cache_control;
   }
 }
 
@@ -135,8 +135,8 @@ server {
   listen 443 ssl;
   server_name explorer.coder.dev;
 
-  ssl_certificate /etc/nginx/ssl/nginx.crt;
-  ssl_certificate_key /etc/nginx/ssl/nginx.key;
+  # ssl_certificate /etc/nginx/ssl/nginx.crt;
+  # ssl_certificate_key /etc/nginx/ssl/nginx.key;
 
   location / {
     proxy_pass http://coder/explorer$request_uri;
@@ -145,9 +145,9 @@ server {
 
     # proxy_cache_valid  200 302  59m;
     # proxy_cache_valid  404      59m;
-    proxy_cache my-cache;
-    expires max;
+    # proxy_cache my-cache;
+    # expires max;
 
-    # proxy_cache_bypass  $http_cache_control;
+    proxy_cache_bypass  $http_cache_control;
   }
 }
