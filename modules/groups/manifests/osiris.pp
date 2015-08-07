@@ -4,6 +4,7 @@ class groups::osiris {
 
   notify { 'Hello Osiris Member, we\'re setting up your workstations': }
 
+  include chrome::canary
   include boot2docker
   include iterm2::stable
   include mysql
