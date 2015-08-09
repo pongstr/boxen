@@ -15,8 +15,9 @@ server {
   listen 443 ssl;
   server_name coder.dev;
 
-  # ssl_certificate /etc/nginx/ssl/nginx.crt;
-  # ssl_certificate_key /etc/nginx/ssl/nginx.key;
+  ssl on;
+  ssl_certificate /etc/nginx/ssl/coder.dev.crt;
+  ssl_certificate_key /etc/nginx/ssl/coder.dev.key;
 
   client_max_body_size 50M;
   try_files $uri @coder.dev;
@@ -43,8 +44,9 @@ server {
   listen 443 ssl;
   server_name app.coder.dev;
 
-  # ssl_certificate /etc/nginx/ssl/nginx.crt;
-  # ssl_certificate_key /etc/nginx/ssl/nginx.key;
+  ssl on;
+  ssl_certificate /etc/nginx/ssl/coder.dev.crt;
+  ssl_certificate_key /etc/nginx/ssl/coder.dev.key;
 
   location / {
     proxy_pass http://coder/dashboard$request_uri;
@@ -91,8 +93,9 @@ server {
   listen 443 ssl;
   server_name developer.coder.dev;
 
-  # ssl_certificate /etc/nginx/ssl/nginx.crt;
-  # ssl_certificate_key /etc/nginx/ssl/nginx.key;
+  ssl on;
+  ssl_certificate /etc/nginx/ssl/coder.dev.crt;
+  ssl_certificate_key /etc/nginx/ssl/coder.dev.key;
 
   location / {
     proxy_pass http://coder/developer$request_uri;
@@ -113,8 +116,9 @@ server {
   listen 443 ssl;
   server_name api.coder.dev;
 
-  # ssl_certificate /etc/nginx/ssl/nginx.crt;
-  # ssl_certificate_key /etc/nginx/ssl/nginx.key;
+  ssl on;
+  ssl_certificate /etc/nginx/ssl/coder.dev.crt;
+  ssl_certificate_key /etc/nginx/ssl/coder.dev.key;
 
   location / {
     proxy_pass http://coder/api$request_uri;
@@ -135,8 +139,9 @@ server {
   listen 443 ssl;
   server_name explorer.coder.dev;
 
-  # ssl_certificate /etc/nginx/ssl/nginx.crt;
-  # ssl_certificate_key /etc/nginx/ssl/nginx.key;
+  ssl on;
+  ssl_certificate /etc/nginx/ssl/coder.dev.crt;
+  ssl_certificate_key /etc/nginx/ssl/coder.dev.key;
 
   location / {
     proxy_pass http://coder/explorer$request_uri;
