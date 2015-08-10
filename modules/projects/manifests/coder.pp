@@ -6,6 +6,19 @@ class projects::coder {
   file { $projects: ensure => directory }
   file { $coder:    ensure => directory }
 
+  file { 'self_signed_certs':
+    ensure => file,
+    source => 'puppet:///modules/projects/templates/shell/certs.sh',
+    path   => "${projects}/certs.sh",
+    owner  => 'root',
+    notify => Exec['CreateSelfSignedCerts'],
+  }
+
+  exec { 'CreateSelfSignedCerts':
+    command     => '${projects}/certs.sh',
+    refreshonly => true
+  }
+
   boxen::project { 'coder':
     dir      => "${coder}",
     mongodb  => true,

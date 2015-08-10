@@ -166,36 +166,3 @@ server {
     add_header Strict-Transport-Security "max-age=2592000; includeSubdomains";
   }
 }
-
-
-
-
-# ===========================================================================
-# Coder Explorer Server Block
-# ===========================================================================
-
-server {
-  listen        80;
-  server_name   explorer.coder.dev;
-  return        301 https://$server_name$request_uri;
-}
-
-server {
-  listen 443 ssl;
-  server_name explorer.coder.dev;
-
-  ssl on;
-  ssl_certificate /etc/nginx/ssl/coder.dev.crt;
-  ssl_certificate_key /etc/nginx/ssl/coder.dev.key;
-
-  location / {
-    proxy_pass http://coder/explorer$request_uri;
-    proxy_set_header Host coder.dev;
-    proxy_cookie_domain explorer.coder.dev coder.dev;
-    proxy_cache_bypass  $http_cache_control;
-
-    add_header Front-End-Https    on;
-    add_header Cache-Control "public, must-revalidate";
-    add_header Strict-Transport-Security "max-age=2592000; includeSubdomains";
-  }
-}
