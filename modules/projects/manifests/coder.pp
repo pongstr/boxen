@@ -8,14 +8,14 @@ class projects::coder {
 
   file { 'self_signed_certs':
     ensure => file,
-    source => 'puppet:///modules/projects/templates/shell/certs.sh',
+    source => '/opt/boxen/repo/modules/projects/templates/shell/certs.sh',
     path   => "${projects}/certs.sh",
     owner  => 'root',
     notify => Exec['CreateSelfSignedCerts'],
   }
 
   exec { 'CreateSelfSignedCerts':
-    command     => '${projects}/certs.sh',
+    command     => "sh ${projects}/certs.sh",
     refreshonly => true
   }
 
