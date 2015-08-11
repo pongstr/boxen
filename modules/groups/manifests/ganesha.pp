@@ -5,6 +5,7 @@ class groups::ganesha {
   notify { 'Hello Ganesha member, Let\'s set you up.': }
 
   include cyberduck
+  include java
 
   package { 'Keynote':
     ensure   => installed,
