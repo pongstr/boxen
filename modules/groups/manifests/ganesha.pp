@@ -5,7 +5,6 @@ class groups::ganesha {
   notify { 'Hello Ganesha member, Let\'s set you up.': }
 
   include cyberduck
-  include java
 
   package { 'Keynote':
     ensure   => installed,
@@ -25,6 +24,11 @@ class groups::ganesha {
     install_options => [
       '--appdir=/Applications'
     ],
+  }
+
+  package { 'java':
+    ensure     => installed,
+    provider   => 'brewcask',
   }
 
   package { 'adobe-reader':
