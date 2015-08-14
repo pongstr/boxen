@@ -112,6 +112,15 @@ class groups::osiris {
     ]
   }
 
+  package { 'remote-desktop-manager':
+    ensure          => installed,
+    provider        => 'brewcask',
+    install_options => [
+      '--no-binaries',
+      '--appdir=/Applications'
+    ]
+  }
+
   package { 'sequel-pro':
     ensure          => installed,
     provider        => 'brewcask',
@@ -119,7 +128,7 @@ class groups::osiris {
       '--no-binaries',
       '--appdir=/Applications'
     ]
-    }
+  }
 
   package { 'sqldeveloper':
     ensure   => installed,
