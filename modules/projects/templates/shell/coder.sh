@@ -3,7 +3,7 @@ set -u
 set -e
 
 SSL_DIR="/etc/nginx/ssl"
-ROOT_SSL_NAME="root-test.dev"
+ROOT_SSL_NAME="root-coder.dev"
 ROOT_SSL_FQDN="coder.dev"
 
 SUB_SSL_NAME="coder.dev"
