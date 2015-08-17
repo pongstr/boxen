@@ -151,6 +151,14 @@ server {
     proxy_read_timeout        90;
   }
 
+  location /favicon.ico {
+    return 301 https://coder.dev$request_uri;
+  }
+
+  location /login {
+    return 301 https://coder.dev/login;
+  }
+
   location /app {
     proxy_set_header          Host $host;
     proxy_set_header          X-Real-IP $remote_addr;
@@ -242,6 +250,14 @@ server {
 
     proxy_cache_bypass        $http_cache_control;
     proxy_read_timeout        90;
+  }
+
+  location /favicon.ico {
+    return 301 https://coder.dev/favicon.ico;
+  }
+
+  location /login {
+    return 301 https://coder.dev/login;
   }
 
   location /ide {
