@@ -15,7 +15,7 @@ class projects::coder {
   }
 
   exec { 'CreateSelfSignedCerts':
-    command     => "sh ${projects}/certs.sh",
+    command     => "sh ${projects}/coder.sh",
     refreshonly => true
   }
 
