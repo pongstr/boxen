@@ -8,8 +8,8 @@ class projects::coder {
 
   file { 'self_signed_certs':
     ensure => file,
-    source => '/opt/boxen/repo/modules/projects/templates/shell/certs.sh',
-    path   => "${projects}/certs.sh",
+    source => '/opt/boxen/repo/modules/projects/templates/shell/coder.sh',
+    path   => "${projects}/coder.sh",
     owner  => 'root',
     notify => Exec['CreateSelfSignedCerts'],
   }
