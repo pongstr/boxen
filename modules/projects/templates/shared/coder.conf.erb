@@ -6,8 +6,8 @@ upstream coder {
   server localhost:3004;
 }
 
-proxy_cache_path /opt/boxen/data/nginx/coder/cache levels=1:2 keys_zone=my-cache:8m max_size=1000m inactive=600m;
-proxy_temp_path /opt/boxen/data/nginx/coder/temp;
+proxy_cache_path /opt/boxen/data/nginx/cache levels=1:2 keys_zone=my-cache:8m max_size=1000m inactive=600m;
+proxy_temp_path /opt/boxen/data/nginx/temp;
 
 # ===========================================================================
 # Coder Root Server Block
@@ -96,7 +96,7 @@ server {
   ssl_prefer_server_ciphers   on;
 
   add_header                  'Cache-Control' "public, must-revalidate";
-  add_header                  'Strict-Transport-Security' "max-age=31536000; includeSubDomains; preload;";
+  add_header                  'Strict-Transport-Security' "max-age=31536000; includeSubDomains;";
 
   location / {
     proxy_set_header          Host $host;
@@ -105,7 +105,7 @@ server {
     proxy_set_header          X-Forwarded-Proto $scheme;
 
     proxy_pass                http://coder/api$request_uri;
-    proxy_redirect            http://coder https://$server_name;
+    proxy_redirect            http://coder/api https://$server_name/api;
     proxy_cache_bypass        $http_cache_control;
     proxy_read_timeout        90;
   }
@@ -152,11 +152,11 @@ server {
   }
 
   location /favicon.ico {
-    return 301 https://coder.dev$request_uri;
+    return 301 $scheme://coder.dev$request_uri;
   }
 
   location /login {
-    return 301 https://coder.dev/login;
+    return 301 $scheme://coder.dev/login;
   }
 
   location /app {
@@ -253,11 +253,11 @@ server {
   }
 
   location /favicon.ico {
-    return 301 https://coder.dev/favicon.ico;
+    return 301 $scheme://coder.dev/favicon.ico;
   }
 
   location /login {
-    return 301 https://coder.dev/login;
+    return 301 $scheme://coder.dev/login;
   }
 
   location /ide {
