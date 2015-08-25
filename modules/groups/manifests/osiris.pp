@@ -130,6 +130,15 @@ class groups::osiris {
     ]
   }
 
+  package { 'skitch':
+    ensure          => installed,
+    provider        => 'brewcask',
+    install_options => [
+      '--no-binaries',
+      '--appdir=/Applications'
+    ]
+  }
+
   package { 'sqldeveloper':
     ensure   => installed,
     provider => 'compressed_app',
