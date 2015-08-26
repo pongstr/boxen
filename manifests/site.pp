@@ -56,10 +56,12 @@ node default {
   include brewcask
   include chrome
   include dashlane
+  include dnsmasq
   include firefox
   include git
   include hipchat
   include hub
+  include nginx
   include vlc
 
   # fail if FDE is not enabled
@@ -68,14 +70,12 @@ node default {
   }
 
   # node versions
-  nodejs::version { 'v0.12': }
+  nodejs::version { '0.8': }
+  nodejs::version { '0.10': }
 
-  # default ruby version
-  # Should be set by group
-  ruby::version { '2.1.0': }
+  # default ruby versions
+  ruby::version { '2.1.1': }
   ruby::version { '2.1.2': }
-  ruby::version { '2.1.3': }
-  ruby::version { '2.1.6': }
 
   # Taps for Homebrew
   homebrew::tap { 'homebrew/services': }
@@ -85,16 +85,16 @@ node default {
   # common, useful packages
   package {
     [
-    'ack',
-    'aspell',
-    'autoconf',
-    'automake',
-    'findutils',
-    'gnu-tar',
-    'libmagic',
-    'mpssh',
-    'wget',
-    'unrar'
+      'ack',
+      'aspell',
+      'autoconf',
+      'automake',
+      'findutils',
+      'gnu-tar',
+      'libmagic',
+      'mpssh',
+      'wget',
+      'unrar'
     ]:
   }
 
