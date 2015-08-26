@@ -11,7 +11,7 @@ class people::josie109 {
       '--appdir=/Applications'
     ]
   }
-  
+
   package { 'remote-desktop-manager':
     ensure          => installed,
     provider        => 'brewcask',

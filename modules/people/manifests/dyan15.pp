@@ -11,7 +11,7 @@ class people::dyan15 {
       '--appdir=/Applications'
     ]
   }
-  
+
   package { 'remote-desktop-manager':
     ensure          => installed,
     provider        => 'brewcask',
