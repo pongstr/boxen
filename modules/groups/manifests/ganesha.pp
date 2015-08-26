@@ -66,4 +66,30 @@ class groups::ganesha {
     ],
   }
 
+  package { 'cord':
+    ensure          => installed,
+    provider        => 'brewcask',
+    install_options => [
+      '--no-binaries',
+      '--appdir=/Applications'
+    ]
+  }
+
+  package { 'remote-desktop-manager':
+    ensure          => installed,
+    provider        => 'brewcask',
+    install_options => [
+      '--no-binaries',
+      '--appdir=/Applications'
+    ]
+  }
+
+  package { 'skype':
+    ensure          => installed,
+    provider        => 'brewcask',
+    install_options => [
+      '--no-binaries',
+      '--appdir=/Applications'
+    ]
+  }
 }
