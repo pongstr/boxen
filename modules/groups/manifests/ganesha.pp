@@ -84,12 +84,5 @@ class groups::ganesha {
     ]
   }
 
-  package { 'skype':
-    ensure          => installed,
-    provider        => 'brewcask',
-    install_options => [
-      '--no-binaries',
-      '--appdir=/Applications'
-    ]
-  }
+
 }
