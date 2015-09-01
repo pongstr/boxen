@@ -34,11 +34,6 @@ GITHUBTARBALL
     elasticsearch (2.7.2)
 
 GITHUBTARBALL
-  remote: boxen/puppet-firefox
-  specs:
-    firefox (1.2.3)
-
-GITHUBTARBALL
   remote: boxen/puppet-foreman
   specs:
     foreman (1.2.0)
@@ -154,11 +149,6 @@ GITHUBTARBALL
     sourcetree (1.0.0)
 
 GITHUBTARBALL
-  remote: boxen/puppet-sublime_text
-  specs:
-    sublime_text (1.1.0)
-
-GITHUBTARBALL
   remote: boxen/puppet-sudo
   specs:
     sudo (1.0.0)
@@ -239,6 +229,11 @@ GITHUBTARBALL
     diffmerge (1.0.0)
 
 GITHUBTARBALL
+  remote: toro-io/puppet-firefox
+  specs:
+    firefox (1.2.4)
+
+GITHUBTARBALL
   remote: toro-io/puppet-netbeans
   specs:
     netbeans (1.0.1)
@@ -269,6 +264,11 @@ GITHUBTARBALL
     sqlpowerarchitect (1.0.0)
 
 GITHUBTARBALL
+  remote: toro-io/puppet-sublime_text
+  specs:
+    sublime_text (1.1.1)
+
+GITHUBTARBALL
   remote: toro-io/puppet-textwrangler
   specs:
     textwrangler (1.0.7)
@@ -290,7 +290,7 @@ DEPENDENCIES
   dnsmasq (= 2.0.1)
   eclipse (= 2.5.0)
   elasticsearch (= 2.7.2)
-  firefox (= 1.2.3)
+  firefox (= 1.2.4)
   foreman (= 1.2.0)
   gcc (= 2.2.1)
   git (= 2.7.9)
@@ -323,7 +323,7 @@ DEPENDENCIES
   springtoolsuite (= 1.2.0)
   sqlpowerarchitect (= 1.0.0)
   stdlib (= 4.2.1)
-  sublime_text (= 1.1.0)
+  sublime_text (= 1.1.1)
   sudo (= 1.0.0)
   sysctl (= 1.0.1)
   textwrangler (= 1.0.7)
