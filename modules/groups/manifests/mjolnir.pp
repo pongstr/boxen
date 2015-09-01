@@ -13,6 +13,7 @@ class groups::mjolnir {
   include chrome::canary
   include cyberduck
   include dnsmasq
+  include firefox::aurora
   include nginx
   include python
   include sublime_text
@@ -153,10 +154,5 @@ class groups::mjolnir {
     onlyif => [
       "test ! -d ${home}/.oh-my-zsh"
     ]
-  }
-
-  # Fetch Package Control from Repository
-  exec { 'SublimeText Package':
-    command => "curl -o ${sublime}Installed Packages/Package Control.sublime-package ${subPkgCtrl}",
   }
 }
