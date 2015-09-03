@@ -12,12 +12,12 @@ class people::dyan15 {
     ]
   }
 
-  $ISKYSOFT = 'http://192.168.21.151/mac-pdf-editor_full1273.dmg'
+  $SCRIBUS = 'http://192.168.21.151/scribus-1.4.5-r2.dmg'
 
-  package { 'iSKYSOFT':
+  package { 'SCRIBUS':
     ensure   => installed,
     provider => 'appdmg',
-    source   => $ISKYSOFT
+    source   => $SCRIBUS
   }
 
 }
