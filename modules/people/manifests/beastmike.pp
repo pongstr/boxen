@@ -7,7 +7,8 @@ class people::beastmike {
   # Projects Cloning will fail since projects
   # clone via git ssh
   # require projects::mjolnir
-
+  
+  include mysql
   include tunnelblick
 
   package { 'vim':
