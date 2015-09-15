@@ -1,2 +1,2 @@
-boxen::personal::osx_apps:
+boxen::personal::homebrew_packages:
   -siege
