@@ -3,6 +3,7 @@ class people::junnel09 {
   require groups::osiris
   notify { 'Hello ${::boxen_user}': }
 
+  include postgresapp
   include webstorm::yosemite
 
   package { 'eclipse-jee':
