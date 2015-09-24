@@ -1,4 +1,9 @@
 GITHUBTARBALL
+  remote: boxen/puppet-atom
+  specs:
+    atom (1.3.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-boxen
   specs:
     boxen (3.11.0)
@@ -9,9 +14,19 @@ GITHUBTARBALL
     brewcask (0.0.6)
 
 GITHUBTARBALL
+  remote: boxen/puppet-chrome
+  specs:
+    chrome (1.2.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-dnsmasq
   specs:
     dnsmasq (2.0.1)
+
+GITHUBTARBALL
+  remote: boxen/puppet-elasticsearch
+  specs:
+    elasticsearch (2.9.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-foreman
@@ -36,7 +51,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-homebrew
   specs:
-    homebrew (1.13.0)
+    homebrew (2.0.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-hub
@@ -44,19 +59,24 @@ GITHUBTARBALL
     hub (1.4.1)
 
 GITHUBTARBALL
-  remote: boxen/puppet-nginx
+  remote: boxen/puppet-java
   specs:
-    nginx (1.4.6)
+    java (1.8.4)
 
 GITHUBTARBALL
-  remote: boxen/puppet-nodejs
+  remote: boxen/puppet-mysql
   specs:
-    nodejs (5.0.0)
+    mysql (2.1.2)
 
 GITHUBTARBALL
   remote: boxen/puppet-openssl
   specs:
     openssl (1.0.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-osx
+  specs:
+    osx (2.8.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-phantomjs
@@ -69,6 +89,21 @@ GITHUBTARBALL
     pkgconfig (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-postgresql
+  specs:
+    postgresql (4.0.1)
+
+GITHUBTARBALL
+  remote: boxen/puppet-python
+  specs:
+    python (2.0.1)
+
+GITHUBTARBALL
+  remote: boxen/puppet-redis
+  specs:
+    redis (3.2.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-repository
   specs:
     repository (2.4.1)
@@ -79,14 +114,39 @@ GITHUBTARBALL
     ruby (8.5.2)
 
 GITHUBTARBALL
+  remote: boxen/puppet-sourcetree
+  specs:
+    sourcetree (1.0.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-sudo
   specs:
     sudo (1.0.0)
 
 GITHUBTARBALL
-  remote: boxen/puppet-xquartz
+  remote: boxen/puppet-sysctl
   specs:
-    xquartz (1.2.1)
+    sysctl (1.0.1)
+
+GITHUBTARBALL
+  remote: boxen/puppet-vagrant
+  specs:
+    vagrant (3.3.3)
+
+GITHUBTARBALL
+  remote: boxen/puppet-virtualbox
+  specs:
+    virtualbox (1.0.13)
+
+GITHUBTARBALL
+  remote: boxen/puppet-wget
+  specs:
+    wget (1.0.1)
+
+GITHUBTARBALL
+  remote: boxen/puppet-zsh
+  specs:
+    zsh (1.0.0)
 
 GITHUBTARBALL
   remote: puppetlabs/puppetlabs-inifile
@@ -103,26 +163,170 @@ GITHUBTARBALL
   specs:
     module_data (0.0.4)
 
+GITHUBTARBALL
+  remote: toro-io/puppet-boot2docker
+  specs:
+    boot2docker (1.0.2)
+
+GITHUBTARBALL
+  remote: toro-io/puppet-cyberduck
+  specs:
+    cyberduck (1.0.2)
+
+GITHUBTARBALL
+  remote: toro-io/puppet-dashlane
+  specs:
+    dashlane (1.0.2)
+
+GITHUBTARBALL
+  remote: toro-io/puppet-diffmerge
+  specs:
+    diffmerge (1.0.0)
+
+GITHUBTARBALL
+  remote: toro-io/puppet-hipchat
+  specs:
+    hipchat (1.1.4)
+
+GITHUBTARBALL
+  remote: toro-io/puppet-keynote
+  specs:
+    keynote (1.0.0)
+
+GITHUBTARBALL
+  remote: toro-io/puppet-mongodb
+  specs:
+    mongodb (1.4.1)
+
+GITHUBTARBALL
+  remote: toro-io/puppet-netbeans
+  specs:
+    netbeans (1.0.1)
+
+GITHUBTARBALL
+  remote: toro-io/puppet-nginx
+  specs:
+    nginx (1.4.7)
+
+GITHUBTARBALL
+  remote: toro-io/puppet-nodejs
+  specs:
+    nodejs (5.0.3)
+
+GITHUBTARBALL
+  remote: toro-io/puppet-postgresapp
+  specs:
+    postgresapp (1.0.0)
+
+GITHUBTARBALL
+  remote: toro-io/puppet-soapui
+  specs:
+    soapui (1.0.0)
+
+GITHUBTARBALL
+  remote: toro-io/puppet-springtoolsuite
+  specs:
+    springtoolsuite (1.2.1)
+
+GITHUBTARBALL
+  remote: toro-io/puppet-sqldeveloper
+  specs:
+    sqldeveloper (1.0.0)
+
+GITHUBTARBALL
+  remote: toro-io/puppet-sqlpowerarchitect
+  specs:
+    sqlpowerarchitect (1.0.0)
+
+GITHUBTARBALL
+  remote: toro-io/puppet-sublime_text
+  specs:
+    sublime_text (1.1.1)
+
+GITHUBTARBALL
+  remote: toro-io/puppet-textwrangler
+  specs:
+    textwrangler (1.0.7)
+
+GITHUBTARBALL
+  remote: toro-io/puppet-tunnelblick
+  specs:
+    tunnelblick (1.0.8)
+
+GITHUBTARBALL
+  remote: toro-io/puppet-vlc
+  specs:
+    vlc (1.1.1)
+
+GITHUBTARBALL
+  remote: toro-io/puppet-webstorm
+  specs:
+    webstorm (1.1.3)
+
+GITHUBTARBALL
+  remote: toro-io/puppet-winzip
+  specs:
+    winzip (1.0.0)
+
+GITHUBTARBALL
+  remote: toro-io/puppet-xquartz
+  specs:
+    xquartz (1.2.2)
+
 DEPENDENCIES
+  atom (= 1.3.0)
+  boot2docker (= 1.0.2)
   boxen (= 3.11.0)
   brewcask (= 0.0.6)
+  chrome (= 1.2.0)
+  cyberduck (= 1.0.2)
+  dashlane (= 1.0.2)
+  diffmerge (= 1.0.0)
   dnsmasq (= 2.0.1)
+  elasticsearch (= 2.9.0)
   foreman (= 1.2.0)
   gcc (= 3.0.2)
   git (= 2.7.92)
   go (= 2.1.0)
-  homebrew (= 1.13.0)
+  hipchat (= 1.1.4)
+  homebrew (= 2.0.0)
   hub (= 1.4.1)
   inifile (= 1.4.1)
+  java (= 1.8.4)
+  keynote (= 1.0.0)
   module_data (= 0.0.4)
-  nginx (= 1.4.6)
-  nodejs (= 5.0.0)
+  mongodb (= 1.4.1)
+  mysql (= 2.1.2)
+  netbeans (= 1.0.1)
+  nginx (= 1.4.7)
+  nodejs (= 5.0.3)
   openssl (= 1.0.0)
+  osx (= 2.8.0)
   phantomjs (= 3.0.0)
   pkgconfig (= 1.0.0)
+  postgresapp (= 1.0.0)
+  postgresql (= 4.0.1)
+  python (= 2.0.1)
+  redis (= 3.2.0)
   repository (= 2.4.1)
   ruby (= 8.5.2)
+  soapui (= 1.0.0)
+  sourcetree (= 1.0.0)
+  springtoolsuite (= 1.2.1)
+  sqldeveloper (= 1.0.0)
+  sqlpowerarchitect (= 1.0.0)
   stdlib (= 4.7.0)
+  sublime_text (= 1.1.1)
   sudo (= 1.0.0)
-  xquartz (= 1.2.1)
+  sysctl (= 1.0.1)
+  textwrangler (= 1.0.7)
+  tunnelblick (= 1.0.8)
+  vagrant (= 3.3.3)
+  virtualbox (= 1.0.13)
+  vlc (= 1.1.1)
+  webstorm (= 1.1.3)
+  wget (= 1.0.1)
+  winzip (= 1.0.0)
+  xquartz (= 1.2.2)
+  zsh (= 1.0.0)
 

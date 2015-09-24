@@ -1,0 +1,5 @@
+boxen::personal::casks:
+  - java
+  - openoffice
+  - firefox
+  - iterm2

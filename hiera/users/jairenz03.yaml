@@ -1,0 +1,12 @@
+boxen::personal::includes:
+  - postgresapp
+  - webstorm
+
+boxen::personal::casks:
+  - eclipse-jee
+  - kitematic
+  - pgadmin3
+
+boxen::personal::homebrew_packages:
+  - asciinema
+  - groovy

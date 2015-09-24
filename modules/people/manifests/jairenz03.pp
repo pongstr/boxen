@@ -1,22 +1,9 @@
 class people::jairenz03 {
 
+  # SysAd build group
   require groups::osiris
-  notify { 'Hello ${::boxen_user}': }
 
-  include webstorm::yosemite
-
-  package { 'eclipse-jee':
-    ensure          => installed,
-    provider        => 'brewcask',
-    install_options => [
-      '--appdir=/Applications'
-    ],
-  }
-  
-  package { 'groovy':
-    ensure   => 'latest',
-    provider => 'homebrew',
-    require  => Package['java']
-  }
+  notify { "Hello ${::boxen_user}, Let's get you bootstrapped.": }
+  notify { "We're now going to run the setup to make you feel at home.": }
 
 }

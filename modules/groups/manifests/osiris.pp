@@ -1,191 +1,80 @@
-# Osiris: Installation Setup for System Administrators
+# Private: For Osiris Personal Config only
+#
+# Usage:
+#
+#   include groups::osiris
 
-class groups::osiris {
 
-  notify { 'Hello Osiris Member, we\'re setting up your workstations': }
+class groups::osiris (
+  $includes          = ['atom', 'boot2docker', 'keynote', 'mysql', 'python', 'sourcetree', 'sublime_text', 'sqldeveloper', 'tunnelblick', 'virtualbox', 'zsh'],
+  $casks             = ['autodmg', 'cord', 'docker-compose', 'evernote', 'filezilla', 'github-desktop', 'mysqlworkbench', 'remote-desktop-manager', 'sequel-pro', 'skitch', 'teamviewer', 'vmware-fusion', 'wireshark'],
+  $osx_apps          = undef,
+  $homebrew_packages = ['siege', 'asciinema'],
+)
+{
+  include boxen::config
 
-  include chrome::canary
-  include boot2docker
-  include iterm2::stable
-  include mysql
-  include python
-  include sourcetree
-  include sublime_text
-  include tunnelblick
-  include virtualbox
-  include zsh
+  $manifests = "${boxen::config::repodir}/modules/people/manifests"
+  $login     = regsubst($boxen::config::login, '-','_', 'G')
+  $merge_hierarchy = $boxen::config::hiera_merge_hierarchy
 
-  package { 'asciinema':
-    ensure   => installed,
-    provider => 'homebrew',
+  if $login != $boxen::config::login {
+    notice("Changed boxen::personal login to ${login}")
+  }
+  if file_exists("${manifests}/${login}.pp") {
+    include "people::${login}"
   }
 
-  package { 'atom':
-    ensure          => installed,
-    provider        => 'brewcask',
-    install_options => [
-      '--no-binaries',
-      '--appdir=/Applications'
-    ]
+
+  # If $includes looks like ['foo', 'bar'], behaves like:
+  # class { 'foo': }
+  # class { 'bar': }
+  $_includes = $merge_hierarchy ? {
+    true      => hiera_array("${name}::includes",undef),
+    default   => $includes
   }
 
-  package { 'autodmg':
-    ensure          => installed,
-    provider        => 'brewcask',
-    install_options => [
-      '--no-binaries',
-      '--appdir=/Applications'
-    ]
+  ensure_resource('class', $_includes)
+
+  if $merge_hierarchy {
+    $merged_osx_apps = hiera_array("${name}::osx_apps",undef)
+    $merged_casks = hiera_array("${name}::casks",undef)
+
+    $_casks = $merged_osx_apps ? {
+      undef   => $merged_casks,
+      default => $merged_osx_apps
+    }
+  }
+  else {
+    # $casks and $osx_apps are synonyms. $osx_apps takes precedence
+    $_casks = $osx_apps ? {
+      undef   => $casks,
+      default => $osx_apps
+    }
   }
 
-  package { 'cord':
-    ensure          => installed,
-    provider        => 'brewcask',
-    install_options => [
-      '--no-binaries',
-      '--appdir=/Applications'
-    ]
-  }
+  # If any casks/osx_apps are specified, declare them as brewcask packages
+  if count($_casks) > 0 { include brewcask }
+  ensure_resource('package', $_casks, {
+    'provider'        => 'brewcask',
+    'install_options' => ['--appdir=/Applications',
+                          "--binarydir=${boxen::config::homebrewdir}/bin"],
+  })
 
-  package { 'docker-compose':
-    ensure          => installed,
-    provider        => 'brewcask',
-    install_options => [
-      '--no-binaries',
-      '--appdir=/Applications'
-    ]
+  # If any homebrew packages are specified , declare them
+  $_homebrew_packages = $merge_hierarchy ? {
+    true      => hiera_array("${name}::homebrew_packages",undef),
+    default   => $homebrew_packages
   }
+  ensure_resource('package', $_homebrew_packages, {
+    'provider' => 'homebrew',
+  })
 
-  package { 'evernote':
-    ensure          => installed,
-    provider        => 'brewcask',
-    install_options => [
-      '--no-binaries',
-      '--appdir=/Applications'
-    ]
-  }
 
-  package { 'filezilla':
-    ensure          => installed,
-    provider        => 'brewcask',
-    install_options => [
-      '--no-binaries',
-      '--appdir=/Applications'
-    ]
-  }
-
-  package { 'github':
-    ensure          => installed,
-    provider        => 'brewcask',
-    install_options => [
-      '--no-binaries',
-      '--appdir=/Applications'
-    ]
-  }
-
-  package { 'java':
-    ensure     => installed,
-    provider   => 'brewcask',
-  }
-
-  package { 'Keynote':
-    ensure   => installed,
-    provider => 'compressed_app',
-    source   => 'http://192.168.21.151/Keynote.zip'
-  }
-
-  package { 'mysqlworkbench':
-    ensure          => installed,
-    provider        => 'brewcask',
-    install_options => [
-      '--no-binaries',
-      '--appdir=/Applications'
-    ]
-  }
-
-  package { 'openoffice':
-    ensure          => installed,
-    provider        => 'brewcask',
-    install_options => [
-      '--no-binaries',
-      '--appdir=/Applications'
-    ]
-  }
-
-  package { 'remote-desktop-manager':
-    ensure          => installed,
-    provider        => 'brewcask',
-    install_options => [
-      '--no-binaries',
-      '--appdir=/Applications'
-    ]
-  }
-
-  package { 'sequel-pro':
-    ensure          => installed,
-    provider        => 'brewcask',
-    install_options => [
-      '--no-binaries',
-      '--appdir=/Applications'
-    ]
-  }
-
-  package { 'skitch':
-    ensure          => installed,
-    provider        => 'brewcask',
-    install_options => [
-      '--no-binaries',
-      '--appdir=/Applications'
-    ]
-  }
-
-  package { 'sqldeveloper':
-    ensure   => installed,
-    provider => 'compressed_app',
-    source   => 'http://192.168.21.151/sqldeveloper-4.1.1.19.59-macosx.app.zip'
-  }
-
-  package { 'teamviewer':
-    ensure          => installed,
-    provider        => 'brewcask',
-    install_options => [
-      '--no-binaries',
-      '--appdir=/Applications'
-    ]
-  }
-
-  package { 'vim':
-    ensure => present,
-  }
-
-  package { 'vmware-fusion':
-    ensure          => installed,
-    provider        => 'brewcask',
-    install_options => [
-      '--no-binaries',
-      '--appdir=/Applications'
-    ]
-  }
-
-  package { 'wireshark':
-    ensure          => installed,
-    provider        => 'brewcask',
-    install_options => [
-      '--no-binaries',
-      '--appdir=/Applications'
-    ]
-  }
-
-  # Vagrant Box Setup:
-  vagrant::box { 'squeeze64/vmware_fusion':
-    source => 'https://s3.amazonaws.com/github-ops/vagrant/squeeze64-6.0.7-vmware_fusion.box'
-  }
-
-  # Oh-My-ZSH
+  ## Oh-My-ZSH
   exec { 'install oh-my-zsh plugin':
     command => "curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh",
-    onlyif => [
-      "test ! -d ${home}/.oh-my-zsh"
-    ]
+    unless  => ["test -d /Users/${USER}/.oh-my-zsh"]
   }
+
 }
