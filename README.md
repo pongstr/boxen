@@ -1,5 +1,5 @@
 Our Boxen
-======+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++======
+======++++++++++++++++++++++++++++++++++++++++++++++++++++++++++======
 
 Okay, before even reading further below, Make sure you have XCode installed and
 had verified installation via gui first! and then install XCode Commandline tools
@@ -44,6 +44,37 @@ Once your shell is ready, open a new tab/window in your Terminal
 and you should be able to successfully run `boxen --env`.
 If that runs cleanly, you're in good shape.
 
+
+Customizing the Boxen
+---
+\'this version of boxen is now a scalable one. Means it will be easier to add application on user, group, or all'/
+
+To Add an App:
+  first is to categorized your needed app based on your provider: [Puppet], [casks], or [homebrew].
+  second is to categorized who will benefit to the application: (user), (group) or (all).
+
+We will be using HIERA to customize the Boxen
+
+User)
+    Add an application declaration using hiera/users/$USERNAME.yaml
+
+      declare if [puppet]
+          boxen::personal:includes:
+            - $app_name
+      declare if [casks]
+          boxen::personal::casks:
+            - $app_name
+      declare if [homebrew]
+          boxen::personal::homebrew_packages:
+
+Group)
+    Add the application inside " --{''} ""
+
+All)
+    Add the declaration using hiera/common.yaml
+
+
+---
 Generating SSH-Keys for Github & Bitbucket
 ---
 
