@@ -53,14 +53,10 @@ Homebrew::Formula <| |> -> Package <| |>
 
 node default {
   # core modules, needed for most things
-  include brewcask
-  include chrome
-  include dashlane
-  include firefox
+  include dnsmasq
   include git
-  include hipchat
   include hub
-  include vlc
+  include nginx
 
   # fail if FDE is not enabled
   if $::root_encrypted == 'no' {
@@ -68,33 +64,23 @@ node default {
   }
 
   # node versions
-  nodejs::version { 'v0.12': }
+  nodejs::version { '0.6': }
+  nodejs::version { '0.8': }
+  nodejs::version { '0.10': }
 
-  # default ruby version
-  # Should be set by group
+  # default ruby versions
+  ruby::version { '1.9.3': }
+  ruby::version { '2.0.0': }
   ruby::version { '2.1.0': }
+  ruby::version { '2.1.1': }
   ruby::version { '2.1.2': }
-  ruby::version { '2.1.3': }
-  ruby::version { '2.1.6': }
-
-  # Taps for Homebrew
-  homebrew::tap { 'homebrew/services': }
-  homebrew::tap { 'caskroom/versions': }
-  homebrew::tap { 'caskroom/fonts': }
 
   # common, useful packages
   package {
     [
-    'ack',
-    'aspell',
-    'autoconf',
-    'automake',
-    'findutils',
-    'gnu-tar',
-    'libmagic',
-    'mpssh',
-    'wget',
-    'unrar'
+      'ack',
+      'findutils',
+      'gnu-tar'
     ]:
   }
 
