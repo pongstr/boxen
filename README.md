@@ -1,5 +1,5 @@
-Our boxen
-===
+Our Boxen
+---
 
 Okay, before even reading further below, Make sure you have XCode installed and
 had verified installation via gui first! and then install XCode Commandline tools
@@ -43,6 +43,15 @@ once done, you may add the line below to your config file:
 Once your shell is ready, open a new tab/window in your Terminal
 and you should be able to successfully run `boxen --env`.
 If that runs cleanly, you're in good shape.
+
+Per-User Customization
+--
+
+You may use hiera configuration when adding specific packages or modules, but please
+do take not of the definitions so you can have a good understanding and utilize its purpose;
+
+In order to add you customization, you'll have to create a file,
+`hiera/users/#{github_username}`, with config entries [here](hiera/users/README.md).
 
 Generating SSH-Keys for Github & Bitbucket
 ---

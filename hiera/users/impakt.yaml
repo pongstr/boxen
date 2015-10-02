@@ -1,0 +1,13 @@
+boxen::personal::includes:
+  - tunnelblick
+  - sublime_text
+  - textwrangler
+  - virtualbox
+
+boxen::personal::casks:
+  - intellij-idea
+  - java
+  - filezilla
+  - openoffice
+  - skype
+  - remote-desktop-manager

@@ -1,0 +1,14 @@
+boxen::personal::includes:
+  - tunnelblick
+
+##ruby
+ruby::global::version: "2.1.0"
+##nodejs
+nodejs:
+  version:
+    - 0.12.7
+  packages:
+    bower: 'latest'
+    grunt-cli: 'latest'
+    nodemon: 'latest'
+    shelljs: 'latest'

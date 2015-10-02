@@ -1,0 +1,12 @@
+boxen::personal::includes:
+  - chrome
+  - dashlane
+  - hipchat
+  - vlc
+
+boxen::personal::casks:
+  - java
+  - firefox
+  - openoffice
+  - firefox
+  - iterm2
