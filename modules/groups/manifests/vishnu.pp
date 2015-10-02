@@ -6,7 +6,7 @@
 
 
 class groups::vishnu (
-  $includes          = ['diffmerge', 'mysql', 'netbeans::jee', 'postgresapp', 'redis', 'solr', 'sourcetree', 'springtoolsuite', 'sqlpowerarchitect', 'sublime_text', 'textwrangler', 'vagrant', 'virtualbox'],
+  $includes          = ['diffmerge', 'mysql', 'netbeans::jee', 'postgresapp', 'redis', 'sourcetree', 'springtoolsuite', 'sqlpowerarchitect', 'sublime_text', 'textwrangler', 'vagrant', 'virtualbox'],
   $casks             = ['dbvisualizer', 'eclipse-jee', 'jenv', 'jd-gui', 'mysqlworkbench', 'pgadmin3'],
   $osx_apps          = undef,
   $homebrew_packages = ['ant', 'groovy', 'maven32', 'tomcat' ],
