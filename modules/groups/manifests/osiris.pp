@@ -6,10 +6,10 @@
 
 
 class groups::osiris (
-  $includes          = ['atom', 'boot2docker', 'keynote', 'mysql', 'python', 'sourcetree', 'sublime_text', 'sqldeveloper', 'tunnelblick', 'virtualbox', 'zsh'],
+  $includes          = ['atom', 'boot2docker', 'keynote', 'python', 'sourcetree', 'sublime_text', 'sqldeveloper', 'tunnelblick', 'virtualbox', 'zsh'],
   $casks             = ['autodmg', 'cord', 'docker-compose', 'evernote', 'filezilla', 'github-desktop', 'mysqlworkbench', 'remote-desktop-manager', 'sequel-pro', 'skitch', 'teamviewer', 'vmware-fusion', 'wireshark'],
   $osx_apps          = undef,
-  $homebrew_packages = ['siege', 'asciinema'],
+  $homebrew_packages = ['siege', 'asciinema', 'mysql'],
 )
 {
   include boxen::config
