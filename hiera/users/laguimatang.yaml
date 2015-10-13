@@ -1,5 +1,0 @@
-boxen::personal::casks:
-  - github
-
-boxen::personal::includes:
-  - tunnelblick
