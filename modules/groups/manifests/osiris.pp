@@ -6,12 +6,40 @@
 
 
 class groups::osiris (
-  $includes          = ['atom', 'boot2docker', 'keynote', 'python', 'sourcetree', 'sublime_text', 'sqldeveloper', 'tunnelblick', 'virtualbox', 'zsh'],
-  $casks             = ['autodmg', 'cord', 'docker-compose', 'evernote', 'filezilla', 'github-desktop', 'mysqlworkbench', 'remote-desktop-manager', 'sequel-pro', 'skitch', 'teamviewer', 'vmware-fusion', 'wireshark'],
-  $osx_apps          = undef,
-  $homebrew_packages = ['siege', 'asciinema', 'mysql'],
-)
-{
+  $includes = [
+    'atom',
+    'boot2docker',
+    'keynote',
+    'python',
+    'sourcetree',
+    'sublime_text',
+    'sqldeveloper',
+    'tunnelblick',
+    'virtualbox',
+    'zsh'
+  ],
+  $casks = [
+    'autodmg',
+    'cord',
+    'docker-compose',
+    'evernote',
+    'filezilla',
+    'github-desktop',
+    'mysqlworkbench',
+    'remote-desktop-manager',
+    'sequel-pro',
+    'skitch',
+    'teamviewer',
+    'vmware-fusion',
+    'wireshark'
+  ],
+  $homebrew_packages = [
+    'siege',
+    'asciinema',
+    'mysql'
+  ],
+  $osx_apps = undef,
+) {
   include boxen::config
 
   $manifests = "${boxen::config::repodir}/modules/people/manifests"
