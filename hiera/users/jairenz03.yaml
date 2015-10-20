@@ -10,3 +10,4 @@ boxen::personal::casks:
 boxen::personal::homebrew_packages:
   - asciinema
   - groovy
+  - maven
