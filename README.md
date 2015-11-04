@@ -53,6 +53,7 @@ do take not of the definitions so you can have a good understanding and utilize 
 In order to add you customization, you'll have to create a file,
 `hiera/users/#{github_username}`, with config entries [here](hiera/users/README.md).
 
+
 Generating SSH-Keys for Github & Bitbucket
 ---
 
